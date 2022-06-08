@@ -4,7 +4,7 @@ cd  /home/usr_admin/auto_qc/web_auto/QC-WEB-MX
 #declare -a tests=(CV-MX-WEB-NAVEGACION CV-MX-WEB-ACCESO CV-MX-WEB-NA)
 declare -a tests=(tester)
 #killall -9 charles||killall -9 Charles;networksetup -connectpppoeservice "uat-mx"
-sleep 9
+sleep 1
 
 for testname in "${tests[@]}"
 do
