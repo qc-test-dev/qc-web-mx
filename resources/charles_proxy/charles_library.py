@@ -4,14 +4,14 @@ import time
 
 from datetime import datetime
 
-charles_proxy_application_path = "/Users/at/Library/charles/Contents/MacOS/"
-local_machine_url_requests_proxy = "http://192.168.1.69:8888"
+charles_proxy_application_path = "/usr/bin/"
+local_machine_url_requests_proxy = "http://127.0.0.1:8888"
 
 charles_proxy_start_recording_url = "http://control.charles/recording/start"
 charles_proxy_stop_recording_url = "http://control.charles/recording/stop"
 charles_proxy_download_recording_url = "http://control.charles/session/download"
-charles_proxy_configuration_file_path = "/Users/at/Desktop/AT-auto/robotFramework/auto_py/QC-WEB-MX/QC-WEB-MX/resources/charles_proxy/com.xk72.charles.config"
-charles_local_path = "/Users/at/Desktop/AT-auto/robotFramework/auto_py/QC-WEB-MX/QC-WEB-MX/Resultados/charles_traces/"
+charles_proxy_configuration_file_path = "/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/charles_proxy/com.xk72.charles.config"
+charles_local_path = "/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/Resultados/charles_traces/"
 
 
 def start_charles_proxy_in_headless_mode():

@@ -1,6 +1,11 @@
 
-!/Users/at/Desktop/AT-auto/robotFramework/auto_py/QC-WEB-MX/QC-WEB-MX/Resultados/charles_traces
-/Users/at/Desktop/AT-auto/robotFramework/auto_py/QC-WEB-MX/QC-WEB-MX/Resultados/*
+Resultados/charles_traces
+Resultados/*
 *.pabotsuitenames
 *.chls
 *pyc
+resources/charles_proxy/charles_library.py
+venv
+.idea
+resources/runtest.sh
+resources/common_functionalities/variables.robot
