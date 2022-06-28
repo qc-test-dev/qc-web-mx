@@ -1,3 +1,4 @@
+resources/charles_proxy/charles_library.py
 Resultados/*
 *.pabotsuitenames
 *.chls
