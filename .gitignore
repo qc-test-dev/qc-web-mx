@@ -4,7 +4,6 @@ Resultados/*
 *.chls
 *.pyc
 *.sh
-resources/charles_proxy/charles_library.py
 venv
 .idea
 resources/runtest.sh
