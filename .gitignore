@@ -1,9 +1,9 @@
-/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/Resultados/*
+Resultados/*
 *.pabotsuitenames
 *.chls
 *.pyc
 *.sh
-/Users/at/Desktop/qcy/QC_WEB_MX/qc-web-mx/resources/charles_proxy/charles_library.py
+resources/charles_proxy/charles_library.py
 venv
 .idea
 resources/runtest.sh
