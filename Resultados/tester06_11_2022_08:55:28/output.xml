@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.12 on darwin)" generated="20220611 08:55:28.369" rpa="false" schemaversion="3">
+<suite id="s1" name="Tester" source="/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/testCases/tester.robot">
+<kw name="-CONFIGURACIÓN INICIAL SUITETEST-" library="libraries_keywords" type="SETUP">
+<kw name="-ABRIR CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy In Headless Mode" library="charles_library">
+<status status="PASS" starttime="20220611 08:55:28.613" endtime="20220611 08:55:32.620"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220611 08:55:37.623" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220611 08:55:32.621" endtime="20220611 08:55:37.623"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:28.612" endtime="20220611 08:55:37.623"/>
+</kw>
+<kw name="-INICIAR GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220611 08:55:37.623" endtime="20220611 08:55:37.656"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:37.623" endtime="20220611 08:55:37.656"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:28.612" endtime="20220611 08:55:37.656"/>
+</kw>
+<test id="s1-t1" name="CV-WEB-ACCESO-VALIDAR LOGOUT" line="11">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<arg>${screenshots-folder}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220611 08:55:37.658" endtime="20220611 08:55:37.659"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:37.658" endtime="20220611 08:55:37.659"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:37.657" endtime="20220611 08:55:37.659"/>
+</kw>
+<kw name="-LOGIN HOME CV-" library="tests_keywords">
+<arg>${email_valido}</arg>
+<arg>${pass_valido}</arg>
+<kw name="-ABRIR LOGIN PAGE-" library="tests_keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url_login_page}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220611 08:55:37.660" level="INFO">Opening browser 'chrome' to base url 'https://www.clarovideo.com/mexico/login'.</msg>
+<status status="PASS" starttime="20220611 08:55:37.660" endtime="20220611 08:55:42.424"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:37.660" endtime="20220611 08:55:42.424"/>
+</kw>
+<kw name="-INGRESAR EMAIL PARA LOGIN-" library="tests_keywords">
+<arg>${email}</arg>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${elementos_login_email['reg_emailtextbox']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220611 08:55:42.432" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:42.434" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<status status="FAIL" starttime="20220611 08:55:42.425" endtime="20220611 08:55:42.459"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${elementos_login_email['reg_emailtextbox']}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220611 08:55:42.460" endtime="20220611 08:55:42.460"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>${elementos_login_email['log_siguiente']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220611 08:55:42.460" endtime="20220611 08:55:42.460"/>
+</kw>
+<status status="FAIL" starttime="20220611 08:55:42.424" endtime="20220611 08:55:42.461"/>
+</kw>
+<kw name="-INGRESAR PASSWORD PARA LOGIN-" library="tests_keywords">
+<arg>${password}</arg>
+<status status="NOT RUN" starttime="20220611 08:55:42.461" endtime="20220611 08:55:42.461"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220611 08:55:42.462" endtime="20220611 08:55:42.462"/>
+</kw>
+<kw name="-CLICK IMAGEN DE PERFIL-" library="tests_keywords">
+<status status="NOT RUN" starttime="20220611 08:55:42.462" endtime="20220611 08:55:42.462"/>
+</kw>
+<kw name="-VALIDAR CARGA HOME-" library="tests_keywords">
+<status status="NOT RUN" starttime="20220611 08:55:42.462" endtime="20220611 08:55:42.462"/>
+</kw>
+<status status="FAIL" starttime="20220611 08:55:37.659" endtime="20220611 08:55:42.462"/>
+</kw>
+<kw name="-LOGOUT HOME CV-" library="tests_keywords">
+<status status="NOT RUN" starttime="20220611 08:55:42.463" endtime="20220611 08:55:42.463"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220611 08:55:42.473" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:42.473" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<status status="FAIL" starttime="20220611 08:55:42.469" endtime="20220611 08:55:42.474"/>
+</kw>
+<status status="FAIL" starttime="20220611 08:55:42.468" endtime="20220611 08:55:42.475">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15</status>
+</kw>
+<tag>test_funcional</tag>
+<status status="FAIL" starttime="20220611 08:55:37.657" endtime="20220611 08:55:42.475">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+
+Also teardown failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15</status>
+</test>
+<test id="s1-t2" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE" line="21">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<arg>${screenshots-folder}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220611 08:55:42.483" endtime="20220611 08:55:42.483"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:42.482" endtime="20220611 08:55:42.484"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:42.482" endtime="20220611 08:55:42.484"/>
+</kw>
+<kw name="-ABRIR REGISTER PAGE-" library="tests_keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url_register_page}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220611 08:55:42.485" level="INFO">Opening browser 'chrome' to base url 'https://www.clarovideo.com/mexico/register'.</msg>
+<status status="PASS" starttime="20220611 08:55:42.485" endtime="20220611 08:55:45.415"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:42.484" endtime="20220611 08:55:45.415"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_register_page}</arg>
+<arg>${textos_register_page}</arg>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{a1}</value>
+<iter>
+<var name="${element}">reg_registrate</var>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<msg timestamp="20220611 08:55:45.423" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:45.424" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<status status="FAIL" starttime="20220611 08:55:45.418" endtime="20220611 08:55:45.431"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220611 08:55:45.432" endtime="20220611 08:55:45.432"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20220611 08:55:45.432" endtime="20220611 08:55:45.432"/>
+</kw>
+<status status="FAIL" starttime="20220611 08:55:45.417" endtime="20220611 08:55:45.432"/>
+</iter>
+<status status="FAIL" starttime="20220611 08:55:45.417" endtime="20220611 08:55:45.432"/>
+</for>
+<status status="FAIL" starttime="20220611 08:55:45.416" endtime="20220611 08:55:45.433"/>
+</kw>
+<kw name="-INGRESAR EMAIL PARA REGISTRO-" library="tests_keywords">
+<arg>${EMAIL_RANDOM_PYTHON}</arg>
+<status status="NOT RUN" starttime="20220611 08:55:45.433" endtime="20220611 08:55:45.433"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_register_page_pass}</arg>
+<arg>${textos_elementos_register_page_pass}</arg>
+<status status="NOT RUN" starttime="20220611 08:55:45.433" endtime="20220611 08:55:45.434"/>
+</kw>
+<kw name="-INGRESAR PASSWORD PARA REGISTRO-" library="tests_keywords">
+<arg>${pass_valido_registro}</arg>
+<status status="NOT RUN" starttime="20220611 08:55:45.434" endtime="20220611 08:55:45.434"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220611 08:55:45.438" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:45.439" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<status status="FAIL" starttime="20220611 08:55:45.435" endtime="20220611 08:55:45.439"/>
+</kw>
+<status status="FAIL" starttime="20220611 08:55:45.434" endtime="20220611 08:55:45.439">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15</status>
+</kw>
+<tag>test_Nofuncional</tag>
+<status status="FAIL" starttime="20220611 08:55:42.481" endtime="20220611 08:55:45.441">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+
+Also teardown failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15</status>
+</test>
+<kw name="-TERMINAR CONFIGURACIÓN SUITETEST-" library="libraries_keywords" type="TEARDOWN">
+<kw name="-DESCARGAR SESION CHARLES-" library="libraries_keywords">
+<kw name="Download Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220611 08:55:45.445" endtime="20220611 08:55:45.547"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:45.445" endtime="20220611 08:55:45.547"/>
+</kw>
+<kw name="-DETENER GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Stop Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220611 08:55:45.548" endtime="20220611 08:55:45.561"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:45.547" endtime="20220611 08:55:45.561"/>
+</kw>
+<kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220611 08:55:45.561" endtime="20220611 08:55:45.700"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:45.561" endtime="20220611 08:55:45.700"/>
+</kw>
+<kw name="-CERRAR CHARLES-" library="libraries_keywords">
+<kw name="Terminate All Charles Proxy Sessions" library="charles_library">
+<status status="PASS" starttime="20220611 08:55:45.701" endtime="20220611 08:55:45.848"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:45.701" endtime="20220611 08:55:45.849"/>
+</kw>
+<status status="PASS" starttime="20220611 08:55:45.444" endtime="20220611 08:55:45.849"/>
+</kw>
+<doc>tester, archivo para probar cambios</doc>
+<status status="FAIL" starttime="20220611 08:55:28.376" endtime="20220611 08:55:45.849"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_funcional</stat>
+<stat pass="0" fail="1" skip="0">test_Nofuncional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Tester">Tester</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220611 08:55:42.432" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:42.473" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001021352c9 chromedriver + 5120713
+1   chromedriver                        0x00000001020c3e33 chromedriver + 4656691
+2   chromedriver                        0x0000000101cb3158 chromedriver + 393560
+3   chromedriver                        0x0000000101c934c8 chromedriver + 263368
+4   chromedriver                        0x0000000101d089bb chromedriver + 743867
+5   chromedriver                        0x0000000101d175af chromedriver + 804271
+6   chromedriver                        0x0000000101d05373 chromedriver + 729971
+7   chromedriver                        0x0000000101cdb609 chromedriver + 558601
+8   chromedriver                        0x0000000101cdc635 chromedriver + 562741
+9   chromedriver                        0x0000000102107b1d chromedriver + 4934429
+10  chromedriver                        0x000000010210c295 chromedriver + 4952725
+11  chromedriver                        0x00000001021113cf chromedriver + 4973519
+12  chromedriver                        0x000000010210ccba chromedriver + 4955322
+13  chromedriver                        0x00000001020e737c chromedriver + 4801404
+14  chromedriver                        0x0000000102126c68 chromedriver + 5061736
+15  chromedriver                        0x0000000102126def chromedriver + 5062127
+16  chromedriver                        0x000000010213c5e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:45.423" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+<msg timestamp="20220611 08:55:45.438" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x00000001103492c9 chromedriver + 5120713
+1   chromedriver                        0x00000001102d7e33 chromedriver + 4656691
+2   chromedriver                        0x000000010fec7158 chromedriver + 393560
+3   chromedriver                        0x000000010fea74c8 chromedriver + 263368
+4   chromedriver                        0x000000010ff1c9bb chromedriver + 743867
+5   chromedriver                        0x000000010ff2b5af chromedriver + 804271
+6   chromedriver                        0x000000010ff19373 chromedriver + 729971
+7   chromedriver                        0x000000010feef609 chromedriver + 558601
+8   chromedriver                        0x000000010fef0635 chromedriver + 562741
+9   chromedriver                        0x000000011031bb1d chromedriver + 4934429
+10  chromedriver                        0x0000000110320295 chromedriver + 4952725
+11  chromedriver                        0x00000001103253cf chromedriver + 4973519
+12  chromedriver                        0x0000000110320cba chromedriver + 4955322
+13  chromedriver                        0x00000001102fb37c chromedriver + 4801404
+14  chromedriver                        0x000000011033ac68 chromedriver + 5061736
+15  chromedriver                        0x000000011033adef chromedriver + 5062127
+16  chromedriver                        0x00000001103505e5 chromedriver + 5150181
+17  libsystem_pthread.dylib             0x00007fff205f28fc _pthread_start + 224
+18  libsystem_pthread.dylib             0x00007fff205ee443 thread_start + 15
+</msg>
+</errors>
+</robot>

@@ -1,12 +1,9 @@
-/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/*
-/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/Resultados/charles_traces
-/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/Resultados/*
+/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/Resultados/*
 *.pabotsuitenames
 *.chls
 *.pyc
 *.sh
-/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/charles_proxy/charles_library.py
+/Users/at/Desktop/qcy/QC_WEB_MX/qc-web-mx/resources/charles_proxy/charles_library.py
 venv
 .idea
 resources/runtest.sh
-/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/common_functionalities/variables.robot
