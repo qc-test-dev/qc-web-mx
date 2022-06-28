@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.6.9 on linux)" generated="20220619 19:13:03.753" rpa="false" schemaversion="3">
+<suite id="s1" name="Tester" source="/home/usr_admin/auto_qc/web_auto/QC-WEB-MX/testCases/tester.robot">
+<kw name="-CONFIGURACIÓN INICIAL SUITETEST-" library="libraries_keywords" type="SETUP">
+<kw name="-ABRIR CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy In Headless Mode" library="charles_library">
+<status status="PASS" starttime="20220619 19:13:07.965" endtime="20220619 19:13:12.603"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220619 19:13:20.574" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220619 19:13:13.173" endtime="20220619 19:13:22.510"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:07.964" endtime="20220619 19:13:25.185"/>
+</kw>
+<kw name="-INICIAR GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220619 19:13:25.193" endtime="20220619 19:13:25.813"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:25.192" endtime="20220619 19:13:25.814"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:07.959" endtime="20220619 19:13:25.815"/>
+</kw>
+<test id="s1-t1" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE" line="21">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<arg>${screenshots-folder}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220619 19:13:25.832" endtime="20220619 19:13:25.833"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:25.831" endtime="20220619 19:13:25.833"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:25.831" endtime="20220619 19:13:25.833"/>
+</kw>
+<kw name="-ABRIR REGISTER PAGE-" library="tests_keywords">
+<kw name="-OPEN chrome-" library="tests_keywords">
+<arg>${url_register_page}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220619 19:13:25.836" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f39cbfeeeb8&gt;</msg>
+<status status="PASS" starttime="20220619 19:13:25.835" endtime="20220619 19:13:25.836"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220619 19:13:25.837" endtime="20220619 19:13:25.837"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220619 19:13:25.837" endtime="20220619 19:13:25.837"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220619 19:13:25.838" endtime="20220619 19:13:25.838"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220619 19:13:25.838" endtime="20220619 19:13:25.839"/>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220619 19:13:25.839" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220619 19:14:27.063" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220619 19:14:27.067" level="FAIL">WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+</msg>
+<status status="FAIL" starttime="20220619 19:13:25.839" endtime="20220619 19:14:27.152"/>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<arg>1024</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" starttime="20220619 19:14:27.153" endtime="20220619 19:14:27.153"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20220619 19:14:27.153" endtime="20220619 19:14:27.153"/>
+</kw>
+<status status="FAIL" starttime="20220619 19:13:25.834" endtime="20220619 19:14:27.154"/>
+</kw>
+<status status="FAIL" starttime="20220619 19:13:25.834" endtime="20220619 19:14:27.155"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_register_page}</arg>
+<arg>${textos_register_page}</arg>
+<status status="NOT RUN" starttime="20220619 19:14:27.156" endtime="20220619 19:14:27.156"/>
+</kw>
+<kw name="-INGRESAR EMAIL PARA REGISTRO-" library="tests_keywords">
+<arg>${EMAIL_RANDOM_PYTHON}</arg>
+<status status="NOT RUN" starttime="20220619 19:14:27.156" endtime="20220619 19:14:27.156"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_register_page_pass}</arg>
+<arg>${textos_elementos_register_page_pass}</arg>
+<status status="NOT RUN" starttime="20220619 19:14:27.156" endtime="20220619 19:14:27.156"/>
+</kw>
+<kw name="-INGRESAR PASSWORD PARA REGISTRO-" library="tests_keywords">
+<arg>${pass_valido_registro}</arg>
+<status status="NOT RUN" starttime="20220619 19:14:27.156" endtime="20220619 19:14:27.156"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220619 19:14:27.158" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20220619 19:14:27.158" endtime="20220619 19:14:27.159"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.157" endtime="20220619 19:14:27.159"/>
+</kw>
+<tag>test_Nofuncional</tag>
+<status status="FAIL" starttime="20220619 19:13:25.817" endtime="20220619 19:14:27.159">WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+</status>
+</test>
+<kw name="-TERMINAR CONFIGURACIÓN SUITETEST-" library="libraries_keywords" type="TEARDOWN">
+<kw name="-DESCARGAR SESION CHARLES-" library="libraries_keywords">
+<kw name="Download Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220619 19:14:27.161" endtime="20220619 19:14:27.214"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.161" endtime="20220619 19:14:27.214"/>
+</kw>
+<kw name="-DETENER GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Stop Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220619 19:14:27.216" endtime="20220619 19:14:27.230"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.215" endtime="20220619 19:14:27.231"/>
+</kw>
+<kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220619 19:14:27.232" endtime="20220619 19:14:27.233"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.231" endtime="20220619 19:14:27.233"/>
+</kw>
+<kw name="-CERRAR CHARLES-" library="libraries_keywords">
+<kw name="Terminate All Charles Proxy Sessions" library="charles_library">
+<status status="PASS" starttime="20220619 19:14:27.233" endtime="20220619 19:14:27.248"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.233" endtime="20220619 19:14:27.248"/>
+</kw>
+<status status="PASS" starttime="20220619 19:14:27.160" endtime="20220619 19:14:27.248"/>
+</kw>
+<doc>tester, archivo para probar cambios</doc>
+<status status="FAIL" starttime="20220619 19:13:03.761" endtime="20220619 19:14:27.249"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_Nofuncional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tester">Tester</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
+"NOT RUN" starttime="20220619 19:13:26.484" endtime="20220619 19:13:26.484"/>
+</kw>
+<status status="FAIL" starttime="20220619 19:13:26.475" endtime="20220619 19:13:26.484"/>
+</iter>
+<status status="FAIL" starttime="20220619 19:11:55.522" endtime="20220619 19:13:26.485"/>
+</for>
+<status status="FAIL" starttime="20220619 19:11:55.520" endtime="20220619 19:13:26.486"/>
+</kw>
+<kw name="-INGRESAR EMAIL PARA REGISTRO-" library="tests_keywords">
+<arg>${EMAIL_RANDOM_PYTHON}</arg>
+<status status="NOT RUN" starttime="20220619 19:13:26.486" endtime="20220619 19:13:26.486"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_register_page_pass}</arg>
+<arg>${textos_elementos_register_page_pass}</arg>
+<status status="NOT RUN" starttime="20220619 19:13:26.487" endtime="20220619 19:13:26.487"/>
+</kw>
+<kw name="-INGRESAR PASSWORD PARA REGISTRO-" library="tests_keywords">
+<arg>${pass_valido_registro}</arg>
+<status status="NOT RUN" starttime="20220619 19:13:26.487" endtime="20220619 19:13:26.487"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220619 19:13:26.494" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+</msg>
+<msg timestamp="20220619 19:13:26.495" level="FAIL">InvalidSessionIdException: Message: invalid session id
+</msg>
+<status status="FAIL" starttime="20220619 19:13:26.488" endtime="20220619 19:13:26.500"/>
+</kw>
+<status status="FAIL" starttime="20220619 19:13:26.488" endtime="20220619 19:13:26.501">InvalidSessionIdException: Message: invalid session id
+</status>
+</kw>
+<tag>test_Nofuncional</tag>
+<status status="FAIL" starttime="20220619 19:09:41.897" endtime="20220619 19:13:26.501">Several failures occurred:
+
+1) WebDriverException: Message: unknown error: session deleted because of page crash
+from unknown error: cannot determine loading status
+from tab crashed
+  (Session info: headless chrome=102.0.5005.115)
+
+
+2) InvalidSessionIdException: Message: invalid session id
+
+
+3) InvalidSessionIdException: Message: invalid session id
+
+
+Also teardown failed:
+InvalidSessionIdException: Message: invalid session id
+</status>
+</test>
+<kw name="-TERMINAR CONFIGURACIÓN SUITETEST-" library="libraries_keywords" type="TEARDOWN">
+<kw name="-DESCARGAR SESION CHARLES-" library="libraries_keywords">
+<kw name="Download Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220619 19:13:26.508" endtime="20220619 19:13:26.769"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:26.507" endtime="20220619 19:13:26.770"/>
+</kw>
+<kw name="-DETENER GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Stop Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220619 19:13:26.771" endtime="20220619 19:13:26.787"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:26.770" endtime="20220619 19:13:26.788"/>
+</kw>
+<kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220619 19:13:26.789" endtime="20220619 19:13:26.795"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:26.788" endtime="20220619 19:13:26.795"/>
+</kw>
+<kw name="-CERRAR CHARLES-" library="libraries_keywords">
+<kw name="Terminate All Charles Proxy Sessions" library="charles_library">
+<status status="PASS" starttime="20220619 19:13:26.795" endtime="20220619 19:13:26.831"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:26.795" endtime="20220619 19:13:26.831"/>
+</kw>
+<status status="PASS" starttime="20220619 19:13:26.507" endtime="20220619 19:13:26.831"/>
+</kw>
+<doc>tester, archivo para probar cambios</doc>
+<status status="FAIL" starttime="20220619 19:09:33.174" endtime="20220619 19:13:26.831"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_Nofuncional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tester">Tester</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220619 19:13:26.408" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+</msg>
+<msg timestamp="20220619 19:13:26.464" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+</msg>
+<msg timestamp="20220619 19:13:26.482" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+</msg>
+<msg timestamp="20220619 19:13:26.494" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+</msg>
+</errors>
+</robot>

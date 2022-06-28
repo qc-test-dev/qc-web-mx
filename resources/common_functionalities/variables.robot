@@ -1,7 +1,7 @@
 *** Variables ***
 #variables globales
 ${browser}              headlesschrome
-${browser-chrome}       chrome
+${jenkins-chrome}       chrome
 ${browser-firefox}      firefox
 ${browser-safari}       safari
 ${email_valido}         s_tamezaa@globalhitss.com

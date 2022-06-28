@@ -1,0 +1,10 @@
+kResultados/charles_traces
+Resultados/*
+*.pabotsuitenames
+*.chls
+*pyc
+resources/charles_proxy/charles_library.py
+venv
+.idea
+resources/runtest.sh
+resources/common_functionalities/variables.robot

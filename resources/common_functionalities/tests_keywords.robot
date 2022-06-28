@@ -16,11 +16,26 @@ Resource      ../common_functionalities/libraries_keywords.robot
     click element     ${elemento}
 
 -ABRIR REGISTER PAGE-
-  open browser    ${url_register_page}    ${browser}
+  # -OPEN chrome-      ${url_register_page}
+    OPEN BROWSER       ${url_register_page}     ${browser}
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
 
+
+
+-OPEN chrome-
+    [Arguments]    ${url}
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument	--disable-gpu
+   # Call Method    ${chrome_options}    add_argument    --crash-dumps-dir:/tmp
+   # Call Method    ${chrome_options}    add_argument    --remote-debugging-port:9222
+    Create Webdriver    Chrome    chrome_options=${chrome_options}
+    Set Window Size  1024  768
+    Go To    ${url} 
 
 
 
@@ -137,8 +152,17 @@ Resource      ../common_functionalities/libraries_keywords.robot
   wait until page contains element    ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
   click element   ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
 
+-open_Chromium_jenkins-
+	[Arguments]           ${url}
+	${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+	Call Method    ${chrome_options}    add_argument    test-type
+	Call Method    ${chrome_options}    add_argument    --disable-extensions
+	Call Method    ${chrome_options}    add_argument    --headless
+	Call Method    ${chrome_options}    add_argument    --disable-gpu
+	Call Method    ${chrome_options}    add_argument    --no-sandbox
+	Open Browser     ${url}    chrome     chrome_options=${chrome_options}  executable_path=/usr/bin/google-chrome
 
-
-
+#-ABRIR REGISTER PAGE-
+ #   -open_Chromium_jenkins-    ${url_register_page}
 
 

@@ -1,0 +1,381 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 33554432 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2976), pid=826, tid=827
+#
+# JRE version:  (11.0.11+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.11+9-20210603, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/usr_admin/auto_qc/web_auto/QC-WEB-MX/core.826)
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx1024M -Dcharles.config=~/.charles.config -Djava.library.path=/usr/lib/charles-proxy /usr/lib/charles-proxy/charles.jar -headless -config /home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/charles_proxy/com.xk72.charles.config
+
+Host: Intel(R) Xeon(R) CPU E5-2680 0 @ 2.70GHz, 4 cores, 7G, Ubuntu 18.04.6 LTS
+Time: Sun Jun 19 19:13:21 2022 CDT elapsed time: 13.444257 seconds (0d 0h 0m 13s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f0494028800):  JavaThread "Unknown thread" [_thread_in_vm, id=827, stack(0x00007f049c010000,0x00007f049c111000)]
+
+Stack: [0x00007f049c010000,0x00007f049c111000],  sp=0x00007f049c10f4a0,  free space=1021k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xe09466]  VMError::report_and_die(int, char const*, char const*, __va_list_tag*, Thread*, unsigned char*, void*, void*, char const*, int, unsigned long)+0x516
+V  [libjvm.so+0xe09f4b]  VMError::report_and_die(Thread*, char const*, int, unsigned long, VMErrorType, char const*, __va_list_tag*)+0x2b
+V  [libjvm.so+0x68eb95]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*, ...)+0xd5
+V  [libjvm.so+0xbffdbe]  os::pd_commit_memory(char*, unsigned long, bool)+0xce
+V  [libjvm.so+0xbf6d4f]  os::commit_memory(char*, unsigned long, bool)+0x1f
+V  [libjvm.so+0x7778e3]  G1CMMarkStack::resize(unsigned long)+0x63
+V  [libjvm.so+0x77b3c2]  G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*, G1RegionToSpaceMapper*)+0x662
+V  [libjvm.so+0x768e9a]  G1CollectedHeap::initialize()+0x62a
+V  [libjvm.so+0xdc5911]  Universe::initialize_heap()+0x41
+V  [libjvm.so+0xdc5be4]  universe_init()+0x44
+V  [libjvm.so+0x8538c7]  init_globals()+0x57
+V  [libjvm.so+0xd9ccfc]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x31c
+V  [libjvm.so+0x9053d6]  JNI_CreateJavaVM+0x56
+C  [libjli.so+0x469a]  JavaMain+0x8a
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000056175d65a1e0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00007f0494040800 GCTaskThread "GC Thread#0" [stack: 0x00007f0498536000,0x00007f0498636000] [id=829]
+
+[error occurred during error reporting (printing all threads), id 0xb, SIGSEGV (0xb) at pc=0x00007f049a5ccb71]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f0494024f30] Heap_lock - owner thread: 0x00007f0494028800
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: Non-zero based: 0x00000000c0000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 2.140 Protecting memory [0x00007f049c010000,0x00007f049c014000] with protection modes 0
+Event: 3.888 Loaded shared library /usr/lib/charles-proxy/jdk/lib/libzip.so
+
+
+Dynamic libraries:
+c0000000-100000000 ---p 00000000 00:00 0 
+56175c8fd000-56175c8fe000 r-xp 00000000 fd:00 1443941                    /usr/lib/charles-proxy/jdk/bin/java
+56175cafe000-56175caff000 r--p 00001000 fd:00 1443941                    /usr/lib/charles-proxy/jdk/bin/java
+56175caff000-56175cb00000 rw-p 00002000 fd:00 1443941                    /usr/lib/charles-proxy/jdk/bin/java
+56175d656000-56175d677000 rw-p 00000000 00:00 0                          [heap]
+7f0474000000-7f0474021000 rw-p 00000000 00:00 0 
+7f0474021000-7f0478000000 ---p 00000000 00:00 0 
+7f0478000000-7f0478021000 rw-p 00000000 00:00 0 
+7f0478021000-7f047c000000 ---p 00000000 00:00 0 
+7f047c000000-7f047c021000 rw-p 00000000 00:00 0 
+7f047c021000-7f0480000000 ---p 00000000 00:00 0 
+7f048103d000-7f04813c9000 rw-p 00000000 00:00 0 
+7f04813c9000-7f04813ca000 ---p 00000000 00:00 0 
+7f04813ca000-7f04814cb000 rw-p 00000000 00:00 0 
+7f04814cb000-7f0483acb000 ---p 00000000 00:00 0 
+7f0483acb000-7f0483d3b000 rwxp 00000000 00:00 0 
+7f0483d3b000-7f048405b000 ---p 00000000 00:00 0 
+7f048405b000-7f04842cb000 rwxp 00000000 00:00 0 
+7f04842cb000-7f048b593000 ---p 00000000 00:00 0 
+7f048b593000-7f048b803000 rwxp 00000000 00:00 0 
+7f048b803000-7f0492acb000 ---p 00000000 00:00 0 
+7f0492acb000-7f0494000000 r--s 00000000 fd:00 1701151                    /usr/lib/charles-proxy/jdk/lib/modules
+7f0494000000-7f049406c000 rw-p 00000000 00:00 0 
+7f049406c000-7f0498000000 ---p 00000000 00:00 0 
+7f049802e000-7f049802f000 ---p 00000000 00:00 0 
+7f049802f000-7f0498534000 rw-p 00000000 00:00 0 
+7f0498534000-7f0498535000 ---p 00000000 00:00 0 
+7f0498535000-7f049863b000 rw-p 00000000 00:00 0 
+7f049863b000-7f0498721000 ---p 00000000 00:00 0 
+7f0498721000-7f0498726000 rw-p 00000000 00:00 0 
+7f0498726000-7f049880c000 ---p 00000000 00:00 0 
+7f049880c000-7f0498813000 r-xp 00000000 fd:00 1701150                    /usr/lib/charles-proxy/jdk/lib/libzip.so
+7f0498813000-7f0498a12000 ---p 00007000 fd:00 1701150                    /usr/lib/charles-proxy/jdk/lib/libzip.so
+7f0498a12000-7f0498a13000 r--p 00006000 fd:00 1701150                    /usr/lib/charles-proxy/jdk/lib/libzip.so
+7f0498a13000-7f0498a14000 rw-p 00007000 fd:00 1701150                    /usr/lib/charles-proxy/jdk/lib/libzip.so
+7f0498a14000-7f0498a1f000 r-xp 00000000 fd:00 2103292                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f0498a1f000-7f0498c1e000 ---p 0000b000 fd:00 2103292                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f0498c1e000-7f0498c1f000 r--p 0000a000 fd:00 2103292                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f0498c1f000-7f0498c20000 rw-p 0000b000 fd:00 2103292                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f0498c20000-7f0498c26000 rw-p 00000000 00:00 0 
+7f0498c26000-7f0498c3d000 r-xp 00000000 fd:00 2103289                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f0498c3d000-7f0498e3c000 ---p 00017000 fd:00 2103289                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f0498e3c000-7f0498e3d000 r--p 00016000 fd:00 2103289                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f0498e3d000-7f0498e3e000 rw-p 00017000 fd:00 2103289                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f0498e3e000-7f0498e40000 rw-p 00000000 00:00 0 
+7f0498e40000-7f0498e4b000 r-xp 00000000 fd:00 2103294                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f0498e4b000-7f049904a000 ---p 0000b000 fd:00 2103294                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f049904a000-7f049904b000 r--p 0000a000 fd:00 2103294                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f049904b000-7f049904c000 rw-p 0000b000 fd:00 2103294                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f049904c000-7f0499054000 r-xp 00000000 fd:00 2103290                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f0499054000-7f0499254000 ---p 00008000 fd:00 2103290                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f0499254000-7f0499255000 r--p 00008000 fd:00 2103290                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f0499255000-7f0499256000 rw-p 00009000 fd:00 2103290                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f0499256000-7f0499270000 r-xp 00000000 fd:00 1701139                    /usr/lib/charles-proxy/jdk/lib/libjimage.so
+7f0499270000-7f0499470000 ---p 0001a000 fd:00 1701139                    /usr/lib/charles-proxy/jdk/lib/libjimage.so
+7f0499470000-7f0499472000 r--p 0001a000 fd:00 1701139                    /usr/lib/charles-proxy/jdk/lib/libjimage.so
+7f0499472000-7f0499473000 rw-p 0001c000 fd:00 1701139                    /usr/lib/charles-proxy/jdk/lib/libjimage.so
+7f0499473000-7f049949c000 r-xp 00000000 fd:00 1701136                    /usr/lib/charles-proxy/jdk/lib/libjava.so
+7f049949c000-7f049969c000 ---p 00029000 fd:00 1701136                    /usr/lib/charles-proxy/jdk/lib/libjava.so
+7f049969c000-7f049969d000 r--p 00029000 fd:00 1701136                    /usr/lib/charles-proxy/jdk/lib/libjava.so
+7f049969d000-7f049969e000 rw-p 0002a000 fd:00 1701136                    /usr/lib/charles-proxy/jdk/lib/libjava.so
+7f049969e000-7f049969f000 rw-p 00000000 00:00 0 
+7f049969f000-7f04996ae000 r-xp 00000000 fd:00 1701149                    /usr/lib/charles-proxy/jdk/lib/libverify.so
+7f04996ae000-7f04998ad000 ---p 0000f000 fd:00 1701149                    /usr/lib/charles-proxy/jdk/lib/libverify.so
+7f04998ad000-7f04998af000 r--p 0000e000 fd:00 1701149                    /usr/lib/charles-proxy/jdk/lib/libverify.so
+7f04998af000-7f04998b0000 rw-p 00010000 fd:00 1701149                    /usr/lib/charles-proxy/jdk/lib/libverify.so
+7f04998b0000-7f04998b7000 r-xp 00000000 fd:00 2103299                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f04998b7000-7f0499ab6000 ---p 00007000 fd:00 2103299                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f0499ab6000-7f0499ab7000 r--p 00006000 fd:00 2103299                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f0499ab7000-7f0499ab8000 rw-p 00007000 fd:00 2103299                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f0499ab8000-7f0499c55000 r-xp 00000000 fd:00 2103286                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f0499c55000-7f0499e54000 ---p 0019d000 fd:00 2103286                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f0499e54000-7f0499e55000 r--p 0019c000 fd:00 2103286                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f0499e55000-7f0499e56000 rw-p 0019d000 fd:00 2103286                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f0499e56000-7f049af66000 r-xp 00000000 fd:00 1701162                    /usr/lib/charles-proxy/jdk/lib/server/libjvm.so
+7f049af66000-7f049b166000 ---p 01110000 fd:00 1701162                    /usr/lib/charles-proxy/jdk/lib/server/libjvm.so
+7f049b166000-7f049b225000 r--p 01110000 fd:00 1701162                    /usr/lib/charles-proxy/jdk/lib/server/libjvm.so
+7f049b225000-7f049b25f000 rw-p 011cf000 fd:00 1701162                    /usr/lib/charles-proxy/jdk/lib/server/libjvm.so
+7f049b25f000-7f049b2b5000 rw-p 00000000 00:00 0 
+7f049b2b5000-7f049b2cf000 r-xp 00000000 fd:00 2103297                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f049b2cf000-7f049b4ce000 ---p 0001a000 fd:00 2103297                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f049b4ce000-7f049b4cf000 r--p 00019000 fd:00 2103297                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f049b4cf000-7f049b4d0000 rw-p 0001a000 fd:00 2103297                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f049b4d0000-7f049b4d4000 rw-p 00000000 00:00 0 
+7f049b4d4000-7f049b4d7000 r-xp 00000000 fd:00 2103285                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f049b4d7000-7f049b6d6000 ---p 00003000 fd:00 2103285                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f049b6d6000-7f049b6d7000 r--p 00002000 fd:00 2103285                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f049b6d7000-7f049b6d8000 rw-p 00003000 fd:00 2103285                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f049b6d8000-7f049b6f4000 r-xp 00000000 fd:00 2093108                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f049b6f4000-7f049b8f3000 ---p 0001c000 fd:00 2093108                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f049b8f3000-7f049b8f4000 r--p 0001b000 fd:00 2093108                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f049b8f4000-7f049b8f5000 rw-p 0001c000 fd:00 2093108                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f049b8f5000-7f049badc000 r-xp 00000000 fd:00 2093214                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f049badc000-7f049bcdc000 ---p 001e7000 fd:00 2093214                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f049bcdc000-7f049bce0000 r--p 001e7000 fd:00 2093214                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f049bce0000-7f049bce2000 rw-p 001eb000 fd:00 2093214                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f049bce2000-7f049bce6000 rw-p 00000000 00:00 0 
+7f049bce6000-7f049bcf5000 r-xp 00000000 fd:00 1701127                    /usr/lib/charles-proxy/jdk/lib/jli/libjli.so
+7f049bcf5000-7f049bef4000 ---p 0000f000 fd:00 1701127                    /usr/lib/charles-proxy/jdk/lib/jli/libjli.so
+7f049bef4000-7f049bef5000 r--p 0000e000 fd:00 1701127                    /usr/lib/charles-proxy/jdk/lib/jli/libjli.so
+7f049bef5000-7f049bef6000 rw-p 0000f000 fd:00 1701127                    /usr/lib/charles-proxy/jdk/lib/jli/libjli.so
+7f049bef6000-7f049bf1f000 r-xp 00000000 fd:00 2093131                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f049bfe1000-7f049c009000 rw-p 00000000 00:00 0 
+7f049c009000-7f049c010000 ---p 00000000 00:00 0 
+7f049c010000-7f049c014000 ---p 00000000 00:00 0 
+7f049c014000-7f049c113000 rw-p 00000000 00:00 0 
+7f049c113000-7f049c11b000 rw-s 00000000 fd:00 1831508                    /tmp/hsperfdata_jenkins/826
+7f049c11b000-7f049c11c000 ---p 00000000 00:00 0 
+7f049c11c000-7f049c11d000 r--p 00000000 00:00 0 
+7f049c11d000-7f049c11f000 rw-p 00000000 00:00 0 
+7f049c11f000-7f049c120000 r--p 00029000 fd:00 2093131                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f049c120000-7f049c121000 rw-p 0002a000 fd:00 2093131                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f049c121000-7f049c122000 rw-p 00000000 00:00 0 
+7ffd01db6000-7ffd01dd7000 rw-p 00000000 00:00 0                          [stack]
+7ffd01de2000-7ffd01de5000 r--p 00000000 00:00 0                          [vvar]
+7ffd01de5000-7ffd01de7000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+
+VM Arguments:
+jvm_args: -Xmx1024M -Dcharles.config=~/.charles.config -Djava.library.path=/usr/lib/charles-proxy 
+java_command: /usr/lib/charles-proxy/charles.jar -headless -config /home/usr_admin/auto_qc/web_auto/QC-WEB-MX/resources/charles_proxy/com.xk72.charles.config
+java_class_path (initial): /usr/lib/charles-proxy/charles.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=/usr/lib/charles-proxy/jdk
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+SHELL=/bin/bash
+LANG=es_MX.UTF-8
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xe09fb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xe09fb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xe09fb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0xbfae20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0xbfae20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xe09fb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0xbfacc0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.6 LTS"
+uname:Linux 4.15.0-176-generic #185-Ubuntu SMP Tue Mar 29 17:40:04 UTC 2022 x86_64
+OS uptime: 40 days 8:45 hours
+libc:glibc 2.27 NPTL 2.27 
+rlimit (soft/hard): STACK 8192k/infinity , CORE 0k/infinity , NPROC 31649/31649 , NOFILE 4096/4096 , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK 65536k/65536k
+load average:49.81 38.39 22.21
+
+/proc/meminfo:
+MemTotal:        8168008 kB
+MemFree:          126944 kB
+MemAvailable:      43388 kB
+Buffers:             912 kB
+Cached:            78848 kB
+SwapCached:          496 kB
+Active:          6546532 kB
+Inactive:        1226916 kB
+Active(anon):    6542904 kB
+Inactive(anon):  1166640 kB
+Active(file):       3628 kB
+Inactive(file):    60276 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       1048572 kB
+SwapFree:              4 kB
+Dirty:              1184 kB
+Writeback:             0 kB
+AnonPages:       7693596 kB
+Mapped:            48520 kB
+Shmem:             15480 kB
+Slab:             122104 kB
+SReclaimable:      43020 kB
+SUnreclaim:        79084 kB
+KernelStack:       22480 kB
+PageTables:        49936 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5132576 kB
+Committed_AS:   13866272 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      296896 kB
+DirectMap2M:     8091648 kB
+
+/sys/kernel/mm/transparent_hugepage/enabled:
+always [madvise] never
+/sys/kernel/mm/transparent_hugepage/defrag (defrag/compaction efforts parameter):
+always defer defer+madvise [madvise] never
+
+Process Memory:
+Virtual Size: 1687804K (peak: 1716940K)
+Resident Set Size: 5588K (peak: 5588K) (anon: 5588K, file: 0K, shmem: 0K)
+Swapped out: 0K
+C-Heap outstanding allocations: 527K
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+63299
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+32768
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-3
+cpu_memory_nodes: 0
+active_processor_count: 4
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 1339338752
+memory_max_usage_in_bytes: 2012409856
+
+VMWare virtualization detected
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU:total 4 (initial active 4) (1 cores per cpu, 1 threads per core) family 6 model 45 stepping 2 microcode 0x714, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, tsc, tscinvbit, tscinv
+CPU Model and flags from /proc/cpuinfo:
+model name	: Intel(R) Xeon(R) CPU E5-2680 0 @ 2.70GHz
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt aes xsave avx hypervisor lahf_lm pti ssbd ibrs ibpb stibp arat flush_l1d arch_capabilities
+Online cpus:
+0-3
+Offline cpus:
+
+BIOS frequency limitation:
+<Not Available>
+Frequency switch latency (ns):
+<Not Available>
+Available cpu frequencies:
+<Not Available>
+Current governor:
+<Not Available>
+Core performance/turbo boost:
+<Not Available>
+
+Memory: 4k page, physical 8168008k(126944k free), swap 1048572k(4k free)
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.11+9-20210603) for linux-amd64 JRE (11.0.11+9-20210603), built on Jun  3 2021 07:22:24 by "" with gcc 5.4.0 20160609
+
+END.

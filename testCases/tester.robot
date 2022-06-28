@@ -8,10 +8,10 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 
 
 *** Test Cases ***
-CV-WEB-ACCESO-VALIDAR LOGOUT
-    [tags]      test_funcional
-    -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
-    -LOGOUT HOME CV-
+#CV-WEB-ACCESO-VALIDAR LOGOUT
+ #   [tags]      test_funcional
+  #  -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+   # -LOGOUT HOME CV-
 
 #CV-WEB-ACCESO-VALIDAR REGISTRO CON CUENTA NUEVA
  #  -ABRIR REGISTER PAGE-
