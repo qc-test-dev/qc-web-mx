@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.12 on darwin)" generated="20220609 12:30:58.120" rpa="false" schemaversion="2">
+<suite id="s1" name="Tester" source="/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/testCases/tester.robot">
+<kw name="-CONFIGURACIÓN INICIAL SUITETEST-" library="libraries_keywords" type="SETUP">
+<kw name="-ABRIR CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy In Headless Mode" library="charles_library">
+<status status="PASS" starttime="20220609 12:30:58.246" endtime="20220609 12:31:02.255"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220609 12:31:06.256" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220609 12:31:02.255" endtime="20220609 12:31:06.256"/>
+</kw>
+<status status="PASS" starttime="20220609 12:30:58.246" endtime="20220609 12:31:06.257"/>
+</kw>
+<kw name="-INICIAR GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Start Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220609 12:31:06.258" endtime="20220609 12:31:06.319"/>
+</kw>
+<status status="PASS" starttime="20220609 12:31:06.257" endtime="20220609 12:31:06.319"/>
+</kw>
+<status status="PASS" starttime="20220609 12:30:58.246" endtime="20220609 12:31:06.319"/>
+</kw>
+<test id="s1-t1" name="CV-WEB-ACCESO-VALIDAR LOGOUT">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="set screenshot directory">
+<arg>${screenshots-folder}</arg>
+<msg timestamp="20220609 12:31:06.326" level="FAIL">No keyword with name 'set screenshot directory' found.</msg>
+<status status="FAIL" starttime="20220609 12:31:06.326" endtime="20220609 12:31:06.326"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.321" endtime="20220609 12:31:06.327"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.320" endtime="20220609 12:31:06.328"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="capture page screenshot">
+<msg timestamp="20220609 12:31:06.332" level="FAIL">No keyword with name 'capture page screenshot' found.</msg>
+<status status="FAIL" starttime="20220609 12:31:06.332" endtime="20220609 12:31:06.332"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.328" endtime="20220609 12:31:06.333">No keyword with name 'capture page screenshot' found.</status>
+</kw>
+<tag>test_funcional</tag>
+<status status="FAIL" starttime="20220609 12:31:06.320" endtime="20220609 12:31:06.333">Setup failed:
+No keyword with name 'set screenshot directory' found.
+
+Also teardown failed:
+No keyword with name 'capture page screenshot' found.</status>
+</test>
+<test id="s1-t2" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="set screenshot directory">
+<arg>${screenshots-folder}</arg>
+<msg timestamp="20220609 12:31:06.338" level="FAIL">No keyword with name 'set screenshot directory' found.</msg>
+<status status="FAIL" starttime="20220609 12:31:06.338" endtime="20220609 12:31:06.339"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.334" endtime="20220609 12:31:06.339"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.334" endtime="20220609 12:31:06.340"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="capture page screenshot">
+<msg timestamp="20220609 12:31:06.344" level="FAIL">No keyword with name 'capture page screenshot' found.</msg>
+<status status="FAIL" starttime="20220609 12:31:06.344" endtime="20220609 12:31:06.344"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.341" endtime="20220609 12:31:06.345">No keyword with name 'capture page screenshot' found.</status>
+</kw>
+<tag>test_Nofuncional</tag>
+<status status="FAIL" starttime="20220609 12:31:06.333" endtime="20220609 12:31:06.345">Setup failed:
+No keyword with name 'set screenshot directory' found.
+
+Also teardown failed:
+No keyword with name 'capture page screenshot' found.</status>
+</test>
+<kw name="-TERMINAR CONFIGURACIÓN SUITETEST-" library="libraries_keywords" type="TEARDOWN">
+<kw name="-DESCARGAR SESION CHARLES-" library="libraries_keywords">
+<kw name="Download Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220609 12:31:06.346" endtime="20220609 12:31:06.388"/>
+</kw>
+<status status="PASS" starttime="20220609 12:31:06.346" endtime="20220609 12:31:06.388"/>
+</kw>
+<kw name="-DETENER GRABACION CHARLES-" library="libraries_keywords">
+<kw name="Stop Charles Proxy Session Recording" library="charles_library">
+<status status="PASS" starttime="20220609 12:31:06.389" endtime="20220609 12:31:06.403"/>
+</kw>
+<status status="PASS" starttime="20220609 12:31:06.388" endtime="20220609 12:31:06.404"/>
+</kw>
+<kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
+<kw name="close all browsers">
+<msg timestamp="20220609 12:31:06.410" level="FAIL">No keyword with name 'close all browsers' found.</msg>
+<status status="FAIL" starttime="20220609 12:31:06.410" endtime="20220609 12:31:06.410"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.404" endtime="20220609 12:31:06.411"/>
+</kw>
+<kw name="-CERRAR CHARLES-" library="libraries_keywords">
+<kw name="Terminate All Charles Proxy Sessions" library="charles_library">
+<status status="PASS" starttime="20220609 12:31:06.411" endtime="20220609 12:31:06.553"/>
+</kw>
+<status status="PASS" starttime="20220609 12:31:06.411" endtime="20220609 12:31:06.553"/>
+</kw>
+<status status="FAIL" starttime="20220609 12:31:06.345" endtime="20220609 12:31:06.554">No keyword with name 'close all browsers' found.</status>
+</kw>
+<doc>tester, archivo para probar cambios</doc>
+<status status="FAIL" starttime="20220609 12:30:58.121" endtime="20220609 12:31:06.554">Suite teardown failed:
+No keyword with name 'close all browsers' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">test_funcional</stat>
+<stat pass="0" fail="1" skip="0">test_Nofuncional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Tester">Tester</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220609 12:30:58.154" level="ERROR">Error in file '/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/tests_keywords.robot' on line 2: Importing library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python39.zip
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload
+  /usr/local/lib/python3.9/site-packages
+  /usr/local/opt/python-tk@3.9/libexec</msg>
+<msg timestamp="20220609 12:30:58.232" level="ERROR">Error in file '/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/libraries_keywords.robot' on line 2: Importing library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python39.zip
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload
+  /usr/local/lib/python3.9/site-packages
+  /usr/local/opt/python-tk@3.9/libexec</msg>
+<msg timestamp="20220609 12:30:58.244" level="ERROR">Error in file '/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/libraries_keywords.robot' on line 10: Importing library 'ExcelLibrary' failed: ModuleNotFoundError: No module named 'ExcelLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python39.zip
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9
+  /usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload
+  /usr/local/lib/python3.9/site-packages
+  /usr/local/opt/python-tk@3.9/libexec</msg>
+</errors>
+</robot>
