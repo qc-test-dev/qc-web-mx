@@ -55,7 +55,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
   -ABRIR LOGIN PAGE-
   -INGRESAR EMAIL PARA LOGIN-        ${email}
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
-   Sleep   20
+   Sleep   9
   -CLICK IMAGEN DE PERFIL-
   -VALIDAR CARGA HOME-
 
@@ -110,13 +110,13 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 -CLICK IMAGEN DE PERFIL-
-    Sleep   7
+    Sleep   4
     wait until page contains element      ${elementos_profile_page['selectProfile_1_image']}
     click element                        ${elementos_profile_page['selectProfile_1_image']}
 
 
 -VALIDAR CARGA HOME-
-    Sleep   7
+    Sleep   4
     wait until page contains element        ${elementos_home_page['home_lupa']}
 
 

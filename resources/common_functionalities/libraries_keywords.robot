@@ -13,7 +13,8 @@ Library	       ExcelLibrary
 # Charles Keywords
 -ABRIR CHARLES-
     start_charles_proxy_in_headless_mode
-    Sleep   4
+    Sleep   3
+
 
 -INICIAR GRABACION CHARLES-
     start_charles_proxy_session_recording
