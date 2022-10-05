@@ -42,6 +42,7 @@ Library	       ExcelLibrary
 -TERMINAR CONFIGURACIÓN SUITETEST-
    -DESCARGAR SESION CHARLES-
    -DETENER GRABACION CHARLES-
+    capture page screenshot
     -CERRAR TODOS LOS NAVEGADORES-
     -CERRAR CHARLES-
 
@@ -66,8 +67,8 @@ Library	       ExcelLibrary
       Scroll Element Into View   ${a1['${element}']}
       Run Keyword And Continue On Failure   Wait Until Element is Visible      ${a1['${element}']}
       Run Keyword And Continue On Failure   element text should be      ${a1['${element}']}    ${a2['${element}']}
-      #Run Keyword And Continue On Failure   capture element screenshot    ${a1['${element}']}
-   END
+      Run Keyword And Continue On Failure   capture element screenshot    ${a1['${element}']}
+    END
 
 -VALIDAR TEXTOS CON XLSX-
    [Arguments]       ${excel_path}        ${sheet_name}     ${e1['elemento']}

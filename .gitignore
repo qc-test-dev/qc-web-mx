@@ -1,10 +1,11 @@
 resources/charles_proxy/charles_library.py
 Resultados/*
 *.pabotsuitenames
-*.chls
+*.chlsls
 *.pyc
 *.sh
 venv
 .idea
 resources/runtest.sh
 resources/common_functionalities/variables.robot
+/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/libraries_keywords.robot
