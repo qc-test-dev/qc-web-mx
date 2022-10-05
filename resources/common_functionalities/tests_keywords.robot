@@ -18,29 +18,31 @@ Resource      ../common_functionalities/libraries_keywords.robot
 -ABRIR REGISTER PAGE-
   # -OPEN chrome-      ${url_register_page}
     OPEN BROWSER       ${url_register_page}     ${browser}
+   #-OPEN WEBSITE-   ${url_register_page}
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
+   #-OPEN WEBSITE-  ${url_login_page} 
 
 
-
--OPEN chrome-
+-OPEN WEBSITE-
     [Arguments]    ${url}
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument	--disable-gpu
-   # Call Method    ${chrome_options}    add_argument    --crash-dumps-dir:/tmp
-   # Call Method    ${chrome_options}    add_argument    --remote-debugging-port:9222
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
-    Set Window Size  1024  768
-    Go To    ${url} 
+    Call Method    ${chrome_options}    add_experimental_option    w3c    ${False}    
+    Call Method    ${chrome_options}    add_argument    no-sandbox
+    Call Method    ${chrome_options}    add_argument    disable-setuid-sandbox
+    Call Method    ${chrome_options}    add_argument    disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    disable-single-click-autofill
+    Wait Until Keyword Succeeds    2x    3s   Create WebDriver    Chrome    chrome_options=${chrome_options}
 
+    Go To    ${url}
+    Maximize Browser Window 
 
 
 -ABRIR LANDIND PAGE-
   open browser     ${url_landing_page}    ${browser}
+  #-OPEN WEBSITE-      ${url_landing_page}
+
 
 -ABRIR POLITICAS PAGE-
   open browser      ${url_politicas_page}    ${browser}

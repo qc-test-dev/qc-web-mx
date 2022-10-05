@@ -24,22 +24,22 @@ CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
    -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
    -CERRAR TODOS LOS NAVEGADORES-
 
-CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE
-  -ABRIR REGISTER PAGE-
-  -VALIDAR TEXTOS Y ELEMENTOS-     ${elementos_register_page}    ${textos_register_page}
+#CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE
+ # -ABRIR REGISTER PAGE-
+  #-VALIDAR TEXTOS Y ELEMENTOS-     ${elementos_register_page}    ${textos_register_page}
 
 
-CV-WEB-ACCESO-VALIDAR LOGIN CON USUARIO CORRECTO
-   -VALIDAR USUARIO CV-    ${email_valido}   ${pass_valido}
-   -CERRAR TODOS LOS NAVEGADORES-
+#CV-WEB-ACCESO-VALIDAR LOGIN CON USUARIO CORRECTO
+ #  -VALIDAR USUARIO CV-    ${email_valido}   ${pass_valido}
+  # -CERRAR TODOS LOS NAVEGADORES-
 
-CV-WEB-ACCESO-VALIDAR LOGIN CON PASSWORD INCORRECTO
-   -VALIDAR USUARIO CV-    ${email_valido}   ${pass_novalido}
-   -CERRAR TODOS LOS NAVEGADORES-
+#CV-WEB-ACCESO-VALIDAR LOGIN CON PASSWORD INCORRECTO
+ #  -VALIDAR USUARIO CV-    ${email_valido}   ${pass_novalido}
+  # -CERRAR TODOS LOS NAVEGADORES-
 
-CV-WEB-ACCESO-VALIDAR LOGOUT
-    -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
-    -LOGOUT HOME CV-
+#CV-WEB-ACCESO-VALIDAR LOGOUT
+ #   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+  #  -LOGOUT HOME CV-
 
 
 
@@ -48,8 +48,8 @@ CV-WEB-ACCESO-VALIDAR LOGOUT
   #  -CLICK TERMINOS Y PROMOCIONES TELMEX-      ${elementos_register_page['reg_terms_promo']}
    # -VALIDAR TEXTOS CON XLSX-     ${telmex_texto}      telmex         ${elementos_conocePromos['telmex_texto_promos']}
 
-CV-WEB-ACCESO-VALIDAR REGISTRO CON CUENTA NUEVA.
-    -ABRIR REGISTER PAGE-
-    -INGRESAR EMAIL PARA REGISTRO-    ${email_random_python}
-    -INGRESAR PASSWORD PARA REGISTRO-  ${pass_valido_registro}
+#CV-WEB-ACCESO-VALIDAR REGISTRO CON CUENTA NUEVA.
+ #   -ABRIR REGISTER PAGE-
+  #  -INGRESAR EMAIL PARA REGISTRO-    ${email_random_python}
+   # -INGRESAR PASSWORD PARA REGISTRO-  ${pass_valido_registro}
 
