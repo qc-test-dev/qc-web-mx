@@ -37,9 +37,9 @@ CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
  #  -VALIDAR USUARIO CV-    ${email_valido}   ${pass_novalido}
   # -CERRAR TODOS LOS NAVEGADORES-
 
-#CV-WEB-ACCESO-VALIDAR LOGOUT
- #   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
-  #  -LOGOUT HOME CV-
+CV-WEB-ACCESO-VALIDAR LOGOUT
+    -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+    -LOGOUT HOME CV-
 
 
 
