@@ -12,22 +12,22 @@ Library	       ExcelLibrary
 *** Keywords ***
 # Charles Keywords
 -ABRIR CHARLES-
-    start_charles_proxy_in_headless_mode
-    Sleep   3
+    #start_charles_proxy_in_headless_mode
+    Sleep   1
 
 
 -INICIAR GRABACION CHARLES-
-    start_charles_proxy_session_recording
-
+    #start_charles_proxy_session_recording
+    Sleep   1
 -DETENER GRABACION CHARLES-
-   stop_charles_proxy_session_recording
-
+   #stop_charles_proxy_session_recording
+   Sleep   1
 -DESCARGAR SESION CHARLES-
-    download_charles_proxy_session_recording
-
+    #download_charles_proxy_session_recording
+     Sleep   1
 -CERRAR CHARLES-
-     terminate_all_charles_proxy_sessions
-
+     #terminate_all_charles_proxy_sessions
+    Sleep   1
 #Suites and tests configurations
 -CERRAR TODOS LOS NAVEGADORES-
     close all browsers
