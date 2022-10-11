@@ -8,4 +8,11 @@ venv
 .idea
 resources/runtest.sh
 resources/common_functionalities/variables.robot
+<<<<<<< HEAD
 #/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/libraries_keywords.robot
+=======
+
+C:\Users\Hitss\Desktop\ATMWEB\venv
+C:\Users\Hitss\Desktop\ATMWEB\main.py
+
+>>>>>>> 23f4f203f6c604348e0b3ae68c3a1422d760011f
