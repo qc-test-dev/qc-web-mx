@@ -1,12 +1,14 @@
 resources/charles_proxy/charles_library.py
 Resultados/*
 *.pabotsuitenames
-*.chls
+*.chlsls
 *.pyc
 *.sh
 venv
 .idea
 resources/runtest.sh
 resources/common_functionalities/variables.robot
+
 C:\Users\Hitss\Desktop\ATMWEB\venv
 C:\Users\Hitss\Desktop\ATMWEB\main.py
+

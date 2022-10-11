@@ -1,7 +1,5 @@
 modificar rutas=>
 
-oky
-
 
 -runtest.sh
 (cambiar path de projecto y nombre de la vpn)
