@@ -18,16 +18,16 @@ Library	       ExcelLibrary
 
 -INICIAR GRABACION CHARLES-
     #start_charles_proxy_session_recording
-
+    Sleep   1
 -DETENER GRABACION CHARLES-
    #stop_charles_proxy_session_recording
-
+   Sleep   1
 -DESCARGAR SESION CHARLES-
     #download_charles_proxy_session_recording
-
+     Sleep   1
 -CERRAR CHARLES-
      #terminate_all_charles_proxy_sessions
-
+    Sleep   1
 #Suites and tests configurations
 -CERRAR TODOS LOS NAVEGADORES-
     close all browsers
