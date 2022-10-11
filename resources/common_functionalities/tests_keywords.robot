@@ -5,7 +5,7 @@ Library        Process
 Library        Collections
 Library       ../../resources/charles_proxy/charles_library.py
 Variables        ../common_functionalities/email_random.py
-Resource       ../common_functionalities/variables.robotgit
+Resource       ../common_functionalities/variables.robot
 Resource      ../common_functionalities/libraries_keywords.robot
 
 
