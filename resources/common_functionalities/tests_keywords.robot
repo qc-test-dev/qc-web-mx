@@ -16,36 +16,21 @@ Resource      ../common_functionalities/libraries_keywords.robot
     click element     ${elemento}
 
 -ABRIR REGISTER PAGE-
-  # -OPEN chrome-      ${url_register_page}
     OPEN BROWSER       ${url_register_page}     ${browser}
-   #-OPEN WEBSITE-   ${url_register_page}
+     Set Window Size    1200    1000
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
-   #-OPEN WEBSITE-  ${url_login_page} 
-
-
--OPEN WEBSITE-
-    [Arguments]    ${url}
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_experimental_option    w3c    ${False}    
-    Call Method    ${chrome_options}    add_argument    no-sandbox
-    Call Method    ${chrome_options}    add_argument    disable-setuid-sandbox
-    Call Method    ${chrome_options}    add_argument    disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    disable-single-click-autofill
-    Wait Until Keyword Succeeds    2x    3s   Create WebDriver    Chrome    chrome_options=${chrome_options}
-
-    Go To    ${url}
-    Maximize Browser Window 
-
+    Set Window Size    1200    1000
 
 -ABRIR LANDIND PAGE-
   open browser     ${url_landing_page}    ${browser}
   #-OPEN WEBSITE-      ${url_landing_page}
-
+   Set Window Size    1200    1000
 
 -ABRIR POLITICAS PAGE-
   open browser      ${url_politicas_page}    ${browser}
+   Set Window Size    1200    1000
 
 -ABRIR PAYMENT PAGE-
    -LOGIN HOME CV-
@@ -53,7 +38,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 -LOGIN HOME CV-
    [Arguments]                       ${email}   ${password}
-
   -ABRIR LOGIN PAGE-
   -INGRESAR EMAIL PARA LOGIN-        ${email}
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
@@ -154,17 +138,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
   wait until page contains element    ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
   click element   ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
 
--open_Chromium_jenkins-
-	[Arguments]           ${url}
-	${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-	Call Method    ${chrome_options}    add_argument    test-type
-	Call Method    ${chrome_options}    add_argument    --disable-extensions
-	Call Method    ${chrome_options}    add_argument    --headless
-	Call Method    ${chrome_options}    add_argument    --disable-gpu
-	Call Method    ${chrome_options}    add_argument    --no-sandbox
-	Open Browser     ${url}    chrome     chrome_options=${chrome_options}  executable_path=/usr/bin/google-chrome
 
-#-ABRIR REGISTER PAGE-
- #   -open_Chromium_jenkins-    ${url_register_page}
+
 
 
