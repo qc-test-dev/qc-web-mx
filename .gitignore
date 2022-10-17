@@ -9,10 +9,16 @@ venv
 resources/runtest.sh
 resources/common_functionalities/variables.robot
 <<<<<<< HEAD
+<<<<<<< HEAD
 #/Users/at/Desktop/qc/QC_WEB_MX/qc-web-mx/resources/common_functionalities/libraries_keywords.robot
 =======
+=======
+>>>>>>> dev_at
 
 C:\Users\Hitss\Desktop\ATMWEB\venv
 C:\Users\Hitss\Desktop\ATMWEB\main.py
 
+<<<<<<< HEAD
 >>>>>>> 23f4f203f6c604348e0b3ae68c3a1422d760011f
+=======
+>>>>>>> dev_at

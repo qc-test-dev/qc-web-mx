@@ -10,7 +10,7 @@
 elementos_login_pass={
     'log_pass_title': 'xpath=//span[normalize-space()="Inicia sesión"]',
     'log_pass_passText': 'xpath=//span[normalize-space()="Contraseña"]',
-    'reg_pass_passtextbox' : 'xpath=////input[@id="password"]',
+    'reg_pass_passtextbox' : 'xpath=//input[@id="password"]',
     'log_pass_siguiente': 'xpath=//button[@id="submitPassword"]',
     'log_pass_cancelar': 'xpath=//button[normalize-space()="CANCELAR"]',
     'log_pass_olvidoPass': 'xpath=//button[normalize-space()="¿OLVIDASTE TU CONTRASEÑA?"]',
