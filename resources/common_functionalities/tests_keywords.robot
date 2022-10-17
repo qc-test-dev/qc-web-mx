@@ -21,7 +21,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
-    Set Window Size    1200    1000
+    Set Window Size    2000    2000
 
 -ABRIR LANDIND PAGE-
   open browser     ${url_landing_page}    ${browser}
