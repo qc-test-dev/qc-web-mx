@@ -13,7 +13,7 @@ elementos_home_page = {
     "home_input_placeholder": "xpath=//input[@placeholder='Buscar']",
     "home_lupa": "xpath=//i[@name='search']"
 
-    #carr
+
 
 
 }
