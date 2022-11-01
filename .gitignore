@@ -3,7 +3,6 @@ Resultados/*
 *.pabotsuitenames
 *.chlsls
 *.pyc
-*.sh
 venv
 .idea
 resources/common_functionalities/variables.robot
