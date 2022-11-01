@@ -44,8 +44,28 @@ CV-WEB-ACCESO-VALIDAR REGISTRO CON CUENTA NUEVA.
     -INGRESAR EMAIL PARA REGISTRO-    ${email_random_python}
     -INGRESAR PASSWORD PARA REGISTRO-  ${pass_valido_registro}
 
+CV-WEB-NAVEGACION-BUSCAR CONTENIDO
+   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+   -ESPERAR ELEMENTO-    ${elementos_VcardMovie_page['add_fav_button']}
+
+CV-WEB-NAVEGACION-AGREGAR CONTENIDO A MI LISTA
+   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+   -CLICK ELEMENTO-     ${elementos_VcardMovie_page['add_fav_button']}
+
+CV-WEB-NAVEGACION-ELIMINAR CONTENIDO DE MI LISTA DESDE VCARD
+   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+   -CLICK ELEMENTO-     ${elementos_VcardMovie_page['add_fav_button']}
 
 CV-WEB-ACCESO-VALIDAR LOGOUT
     -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
     -LOGOUT HOME CV-
-    #ok
+

@@ -10,6 +10,7 @@ elementos_home_page = {
     "home_ticker_close": "xpath=//*[@id='app']/div/section/button[2]/img",
     "home_logocv": "xpath=//img[@alt='Clarovideo Logo']",
     "home_input_buscador": 'xpath=//input[@placeholder="Buscar"]',
+    "home_input_placeholder": "xpath=//input[@placeholder='Buscar']",
     "home_lupa": "xpath=//i[@name='search']"
 
     #carr
