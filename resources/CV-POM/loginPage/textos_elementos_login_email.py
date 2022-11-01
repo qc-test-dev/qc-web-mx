@@ -7,5 +7,6 @@ textos_elementos_login_email={
     'log_continuaFB': 'CONTINÚA CON FACEBOOK',
     'log_sesionAPPLE': 'INICIAR SESIÓN CON APPLE',
     'log_nuevo?': '¿Nuevo en Claro video? Registrate',
+    'log_reg': 'Registrate',
     'log_RegLink': 'Registrate',
 }

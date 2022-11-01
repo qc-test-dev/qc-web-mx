@@ -13,7 +13,13 @@ Resource      ../common_functionalities/libraries_keywords.robot
 *** Keywords ***
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
+    Wait Until Element Is Visible   ${elemento}
     click element     ${elemento}
+
+-GET TEXT-
+    [Arguments]   ${elemento}
+    get text    ${elemento}
+
 
 -ABRIR REGISTER PAGE-
   # -OPEN chrome-      ${url_register_page}
@@ -22,7 +28,9 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
-   #-OPEN WEBSITE-  ${url_login_page} 
+   Set Window Size     1600   1600
+
+   #-OPEN WEBSITE-  ${url_login_page}
 
 
 -OPEN WEBSITE-
@@ -48,7 +56,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
   open browser      ${url_politicas_page}    ${browser}
 
 -ABRIR PAYMENT PAGE-
-   -LOGIN HOME CV-
+   -LOGIN HOME CV-     ${email}   ${password}
    go to   ${url_payment_page}
 
 -LOGIN HOME CV-
@@ -81,8 +89,12 @@ Resource      ../common_functionalities/libraries_keywords.robot
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
    wait until page contains element    xpath=//div[@class='_l88cd _2hS3x']
 
-
-
+-INGRESAR TEXTO PARA SEARCH-
+  [Arguments]                        ${Canal fake}
+   wait until element is visible     ${Elementos_Search['buscador']}
+   input text                        ${Elementos_Search['buscador']}       ${Canal fake}
+   click button                      ${Elementos_Search['buscador']}
+   Sleep    8
 
 -INGRESAR EMAIL PARA LOGIN-
   [Arguments]                        ${email}
@@ -167,4 +179,5 @@ Resource      ../common_functionalities/libraries_keywords.robot
 #-ABRIR REGISTER PAGE-
  #   -open_Chromium_jenkins-    ${url_register_page}
 
-
+-Sleep-
+    Sleep   60

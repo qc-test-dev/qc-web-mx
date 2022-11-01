@@ -62,9 +62,11 @@ Library	       ExcelLibrary
 
 #Functions
 -VALIDAR TEXTOS Y ELEMENTOS-
+
   [Arguments]    ${a1}    ${a2}
    FOR  ${element}   IN   @{a1}
       Scroll Element Into View   ${a1['${element}']}
+      Wait Until Element Is Visible    ${a1['${element}']}
       Run Keyword And Continue On Failure   Wait Until Element is Visible      ${a1['${element}']}
       Run Keyword And Continue On Failure   element text should be      ${a1['${element}']}    ${a2['${element}']}
       Run Keyword And Continue On Failure   capture element screenshot    ${a1['${element}']}
