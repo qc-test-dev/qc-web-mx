@@ -3,11 +3,9 @@ Resultados/*
 *.pabotsuitenames
 *.chlsls
 *.pyc
-*.sh
 venv
 .idea
 resources/common_functionalities/variables.robot
-
 C:\Users\Hitss\Desktop\ATMWEB\venv
 C:\Users\Hitss\Desktop\ATMWEB\main.py
 
