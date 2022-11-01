@@ -1,5 +1,5 @@
 *** Settings ***
-Library        Selenium2Library       implicit_wait=20s
+Library        Selenium2Library       implicit_wait=25s
 Library        OperatingSystem
 Library        Process
 Library        Collections
@@ -13,7 +13,19 @@ Resource      ../common_functionalities/libraries_keywords.robot
 *** Keywords ***
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
+    wait until element is visible     ${elemento}
     click element     ${elemento}
+
+-ESPERAR ELEMENTO-
+        [Arguments]   ${elemento}
+        wait until element is visible     ${elemento}
+
+
+
+-INGRESAR TEXTO-
+    [Arguments]                      ${elemento}   ${text}
+    input text                       ${elemento}   ${text}
+
 
 -ABRIR REGISTER PAGE-
     OPEN BROWSER       ${url_register_page}     ${browser}
@@ -21,7 +33,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
-    Set Window Size    2000    2000
+    Set Window Size    1200    1000
 
 -ABRIR LANDIND PAGE-
   open browser     ${url_landing_page}    ${browser}
@@ -33,7 +45,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
    Set Window Size    1200    1000
 
 -ABRIR PAYMENT PAGE-
-   -LOGIN HOME CV-
+   -LOGIN HOME CV-    ${email}   ${password}
    go to   ${url_payment_page}
 
 -LOGIN HOME CV-
@@ -41,7 +53,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
   -ABRIR LOGIN PAGE-
   -INGRESAR EMAIL PARA LOGIN-        ${email}
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
-   Sleep   9
   -CLICK IMAGEN DE PERFIL-
   -VALIDAR CARGA HOME-
 
@@ -96,7 +107,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 -CLICK IMAGEN DE PERFIL-
-    Sleep   4
     wait until page contains element      ${elementos_profile_page['selectProfile_1_image']}
     click element                        ${elementos_profile_page['selectProfile_1_image']}
 
