@@ -1,5 +1,5 @@
 *** Settings ***
-Library        Selenium2Library       implicit_wait=25s
+Library        Selenium2Library       implicit_wait=20s
 Library        OperatingSystem
 Library        Process
 Library        Collections
@@ -13,15 +13,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
 *** Keywords ***
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
-<<<<<<< HEAD
-    wait until element is visible     ${elemento}
-    click element     ${elemento}
-
--ESPERAR ELEMENTO-
-        [Arguments]   ${elemento}
-        wait until element is visible     ${elemento}
-
-=======
     Wait Until Element Is Visible   ${elemento}
     click element     ${elemento}
 
@@ -30,54 +21,28 @@ Resource      ../common_functionalities/libraries_keywords.robot
     get text    ${elemento}
 
 
--ABRIR REGISTER PAGE-
-  # -OPEN chrome-      ${url_register_page}
-    OPEN BROWSER       ${url_register_page}     ${browser}
-   #-OPEN WEBSITE-   ${url_register_page}
+
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
    Set Window Size     1200   1200
 
    #-OPEN WEBSITE-  ${url_login_page}
->>>>>>> dev_aj
 
 
--INGRESAR TEXTO-
-    [Arguments]                      ${elemento}   ${text}
-    input text                       ${elemento}   ${text}
-
-
--ABRIR REGISTER PAGE-
-    OPEN BROWSER       ${url_register_page}     ${browser}
-     Set Window Size    1200    1000
-
--ABRIR LOGIN PAGE-
-   OPEN BROWSER   ${url_login_page}     ${browser}
-    Set Window Size    1200    1000
-
--ABRIR LANDIND PAGE-
-  open browser     ${url_landing_page}    ${browser}
-  #-OPEN WEBSITE-      ${url_landing_page}
-   Set Window Size    1200    1000
-
--ABRIR POLITICAS PAGE-
-  open browser      ${url_politicas_page}    ${browser}
-   Set Window Size    1200    1000
 
 -ABRIR PAYMENT PAGE-
-<<<<<<< HEAD
-   -LOGIN HOME CV-    ${email}   ${password}
-=======
    -LOGIN HOME CV-     ${email}   ${password}
->>>>>>> dev_aj
-   go to   ${url_payment_page}
+     go to   ${url_payment_page}
+     Set Window Size     1200   1200
 
 -LOGIN HOME CV-
    [Arguments]                       ${email}   ${password}
+
   -ABRIR LOGIN PAGE-
   -INGRESAR EMAIL PARA LOGIN-        ${email}
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
+   Sleep   9
   -CLICK IMAGEN DE PERFIL-
   -VALIDAR CARGA HOME-
 
@@ -168,6 +133,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 -CLICK IMAGEN DE PERFIL-
+    Sleep   4
     wait until page contains element      ${elementos_profile_page['selectProfile_1_image']}
     click element                        ${elementos_profile_page['selectProfile_1_image']}
 
@@ -209,21 +175,29 @@ Resource      ../common_functionalities/libraries_keywords.robot
   wait until page contains element    ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
   click element   ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
 
-<<<<<<< HEAD
 
 
-=======
--open_Chromium_jenkins-
-	[Arguments]           ${url}
-	${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-	Call Method    ${chrome_options}    add_argument    test-type
-	Call Method    ${chrome_options}    add_argument    --disable-extensions
-	Call Method    ${chrome_options}    add_argument    --headless
-	Call Method    ${chrome_options}    add_argument    --disable-gpu
-	Call Method    ${chrome_options}    add_argument    --no-sandbox
-	Open Browser   ${url}    chrome     chrome_options=${chrome_options}  executable_path=/usr/bin/google-chrome
+-ESPERAR ELEMENTO-
+        [Arguments]   ${elemento}
+        wait until element is visible     ${elemento}
 
-#-ABRIR REGISTER PAGE-
- #   -open_Chromium_jenkins-    ${url_register_page}
->>>>>>> dev_aj
+-INGRESAR TEXTO-
+    [Arguments]                      ${elemento}   ${text}
+    input text                       ${elemento}   ${text}
 
+
+-ABRIR REGISTER PAGE-
+    OPEN BROWSER       ${url_register_page}     ${browser}
+     Set Window Size    1200    1000
+
+-ABRIR LOGIN PAGE-
+   OPEN BROWSER   ${url_login_page}     ${browser}
+    Set Window Size    1200    1000
+
+-ABRIR LANDIND PAGE-
+  open browser     ${url_landing_page}    ${browser}
+  Set Window Size    1200    1000
+
+-ABRIR POLITICAS PAGE-
+  open browser      ${url_politicas_page}    ${browser}
+   Set Window Size    1200    1000
