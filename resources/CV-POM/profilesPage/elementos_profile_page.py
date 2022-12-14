@@ -1,11 +1,4 @@
 # elementos_profile_page={
-#
-#     "selectProfile_1_image": "xpath=//div[@class='image-grid-container']//div[1]//div[1]//img[1]",
-#     "selectProfile_2_image": "xpath=//div[@class='image-grid-container']//div[1]//div[1]//img[1]",
-#
-# }
-
-# elementos_profile_page={
 #     "selectProfile_1_image": "xpath=//body/div[@id='app']/div/div[contains(@class,'wrap')]/div/div[contains(@class,'profile-container-admin')]/div[contains(@class,'undefined profile-container')]/div[contains(@class,'profile-container-body')]/div/div[contains(@class,'image-grid-container')]/div[1]",
 #    # "selectProfile_2_image": "xpath=//div[@class='image-grid-container']//div[1]//div[1]//img[1]",
 

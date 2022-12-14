@@ -1,123 +1,1012 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221007 14:01:46.262" rpa="false" schemaversion="3">
-<suite id="s1" name="CV-MX-WEB-NA" source="C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\testCases\CV-MX-WEB-NA.robot">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221213 18:26:51.560" rpa="false" schemaversion="3">
+<suite id="s1" name="CV-MX-WEB-NA-JS" source="C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\testCases\CV-MX-WEB-NA-JS.robot">
 <kw name="-CONFIGURACIÓN INICIAL SUITETEST-" library="libraries_keywords" type="SETUP">
 <kw name="-ABRIR CHARLES-" library="libraries_keywords">
-<kw name="start_charles_proxy_in_headless_mode">
-<msg timestamp="20221007 14:01:46.609" level="FAIL">No keyword with name 'start_charles_proxy_in_headless_mode' found.</msg>
-<status status="FAIL" starttime="20221007 14:01:46.609" endtime="20221007 14:01:46.609"/>
-</kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
+<arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20221007 14:01:46.610" endtime="20221007 14:01:46.610"/>
+<msg timestamp="20221213 18:26:52.867" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221213 18:26:51.860" endtime="20221213 18:26:52.867"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.604" endtime="20221007 14:01:46.610"/>
+<status status="PASS" starttime="20221213 18:26:51.860" endtime="20221213 18:26:52.867"/>
 </kw>
 <kw name="-INICIAR GRABACION CHARLES-" library="libraries_keywords">
-<status status="NOT RUN" starttime="20221007 14:01:46.610" endtime="20221007 14:01:46.610"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:26:53.874" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221213 18:26:52.867" endtime="20221213 18:26:53.874"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.604" endtime="20221007 14:01:46.611"/>
+<status status="PASS" starttime="20221213 18:26:52.867" endtime="20221213 18:26:53.874"/>
 </kw>
-<test id="s1-t1" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LANDING PAGE" line="12">
-<status status="FAIL" starttime="20221007 14:01:46.611" endtime="20221007 14:01:46.612">Parent suite setup failed:
-No keyword with name 'start_charles_proxy_in_headless_mode' found.</status>
-</test>
-<test id="s1-t2" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE" line="19">
-<status status="FAIL" starttime="20221007 14:01:46.613" endtime="20221007 14:01:46.614">Parent suite setup failed:
-No keyword with name 'start_charles_proxy_in_headless_mode' found.</status>
+<status status="PASS" starttime="20221213 18:26:51.860" endtime="20221213 18:26:53.874"/>
+</kw>
+<test id="s1-t1" name="CV-WEB-NAVEGACION-VALIDAR ELEMENTOS-NODO HOME PAGE" line="23">
+<kw name="-CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="SETUP">
+<kw name="-CONFIGURAR DIRECTORIO SCREENSHOTS-" library="libraries_keywords">
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<arg>${screenshots-folder}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:26:53.874"/>
+</kw>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:26:53.874"/>
+</kw>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:26:53.874"/>
+</kw>
+<kw name="-LOGIN HOME CV-" library="tests_keywords">
+<arg>${email_valido}</arg>
+<arg>${pass_valido}</arg>
+<kw name="-ABRIR LOGIN PAGE-" library="tests_keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url_login_page}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221213 18:26:53.874" level="INFO">Opening browser 'Chrome' to base url 'https://www.clarovideo.com/mexico/login'.</msg>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:26:59.366"/>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<arg>1200</arg>
+<arg>1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20221213 18:26:59.366" endtime="20221213 18:26:59.484"/>
+</kw>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:26:59.484"/>
+</kw>
+<kw name="-INGRESAR EMAIL PARA LOGIN-" library="tests_keywords">
+<arg>${email}</arg>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${elementos_login_email['reg_emailtextbox']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:26:59.485" endtime="20221213 18:27:02.376"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${elementos_login_email['reg_emailtextbox']}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221213 18:27:02.379" level="INFO">Typing text 's_tamezaa@globalhitss.com' into text field 'xpath=//input[@id="emailLogin"]'.</msg>
+<status status="PASS" starttime="20221213 18:27:02.377" endtime="20221213 18:27:02.674"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>${elementos_login_email['log_siguiente']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221213 18:27:02.676" level="INFO">Clicking button 'xpath=//button[@id="submitEmail"]'.</msg>
+<status status="PASS" starttime="20221213 18:27:02.674" endtime="20221213 18:27:02.875"/>
+</kw>
+<status status="PASS" starttime="20221213 18:26:59.485" endtime="20221213 18:27:02.875"/>
+</kw>
+<kw name="-INGRESAR PASSWORD PARA LOGIN-" library="tests_keywords">
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${elementos_login_pass['reg_pass_passtextbox']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:02.876" endtime="20221213 18:27:03.138"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${elementos_login_pass['reg_pass_passtextbox']}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221213 18:27:03.140" level="INFO">Typing text 'Claro123!' into text field 'xpath=//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221213 18:27:03.139" endtime="20221213 18:27:03.255"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>${elementos_login_pass['log_pass_siguiente']}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221213 18:27:03.257" level="INFO">Clicking button 'xpath=//button[@id="submitPassword"]'.</msg>
+<status status="PASS" starttime="20221213 18:27:03.255" endtime="20221213 18:27:03.348"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:02.875" endtime="20221213 18:27:03.348"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>9</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:12.358" level="INFO">Slept 9 seconds</msg>
+<status status="PASS" starttime="20221213 18:27:03.349" endtime="20221213 18:27:12.358"/>
+</kw>
+<kw name="-CLICK IMAGEN DE PERFIL-" library="tests_keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:16.370" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221213 18:27:12.358" endtime="20221213 18:27:16.370"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${elementos_profile_page['selectProfile_1_image']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221213 18:27:16.370" endtime="20221213 18:27:16.377"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${elementos_profile_page['selectProfile_1_image']}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 18:27:16.377" level="INFO">Clicking element 'xpath=//div[@class='image-grid-container']//div[1]//div[1]//img[1]'.</msg>
+<status status="PASS" starttime="20221213 18:27:16.377" endtime="20221213 18:27:16.472"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:12.358" endtime="20221213 18:27:16.472"/>
+</kw>
+<kw name="-VALIDAR CARGA HOME-" library="tests_keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:20.488" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221213 18:27:16.473" endtime="20221213 18:27:20.488"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${elementos_home_page['home_lupa']}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221213 18:27:20.488" endtime="20221213 18:27:21.050"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:16.473" endtime="20221213 18:27:21.050"/>
+</kw>
+<status status="PASS" starttime="20221213 18:26:53.874" endtime="20221213 18:27:21.050"/>
+</kw>
+<kw name="-Scroll-" library="tests_keywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo (0,1500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221213 18:27:21.052" level="INFO">Executing JavaScript:
+window.scrollTo (0,1500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20221213 18:27:21.051" endtime="20221213 18:27:21.066"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.051" endtime="20221213 18:27:21.066"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_home_page}</arg>
+<arg>${textos_home_page}</arg>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{a1}</value>
+<iter>
+<var name="${element}">home_logocv</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.067" endtime="20221213 18:27:21.092"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.092" endtime="20221213 18:27:21.111"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.092" endtime="20221213 18:27:21.111"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:21.114" level="INFO">Verifying element 'xpath=//img[@alt='Clarovideo Logo']' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:21.111" endtime="20221213 18:27:21.130"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.111" endtime="20221213 18:27:21.130"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:21.293" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-843.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-843.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:21.130" endtime="20221213 18:27:21.294"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.130" endtime="20221213 18:27:21.294"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.067" endtime="20221213 18:27:21.294"/>
+</iter>
+<iter>
+<var name="${element}">home_input_buscador</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.294" endtime="20221213 18:27:21.321"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.322" endtime="20221213 18:27:21.340"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.322" endtime="20221213 18:27:21.340"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:21.342" level="INFO">Verifying element 'xpath=//input[@placeholder="Buscar"]' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:21.340" endtime="20221213 18:27:21.363"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.340" endtime="20221213 18:27:21.363"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:21.508" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-844.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-844.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:21.363" endtime="20221213 18:27:21.508"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.363" endtime="20221213 18:27:21.508"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.294" endtime="20221213 18:27:21.508"/>
+</iter>
+<iter>
+<var name="${element}">home_lupa</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.508" endtime="20221213 18:27:21.532"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.532" endtime="20221213 18:27:21.552"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.532" endtime="20221213 18:27:21.552"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:21.554" level="INFO">Verifying element 'xpath=//i[@name='search']' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:21.552" endtime="20221213 18:27:21.563"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.552" endtime="20221213 18:27:21.563"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:21.734" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-845.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-845.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:21.563" endtime="20221213 18:27:21.734"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.563" endtime="20221213 18:27:21.735"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.508" endtime="20221213 18:27:21.735"/>
+</iter>
+<iter>
+<var name="${element}">home_avatar</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.735" endtime="20221213 18:27:21.761"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.761" endtime="20221213 18:27:21.780"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.761" endtime="20221213 18:27:21.780"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:21.781" level="INFO">Verifying element 'xpath=//a[@class='dropdown-toggle dropdownUser menu_user custom-menu-user-style hidden-xs']//img[@class='menu_user--img']' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:21.781" endtime="20221213 18:27:21.796"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.780" endtime="20221213 18:27:21.796"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:21.950" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-846.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-846.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:21.796" endtime="20221213 18:27:21.950"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.796" endtime="20221213 18:27:21.950"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.735" endtime="20221213 18:27:21.950"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_inicio</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.951" endtime="20221213 18:27:21.977"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:21.977" endtime="20221213 18:27:21.996"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.977" endtime="20221213 18:27:21.996"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:21.999" level="INFO">Verifying element 'xpath=//div[contains(text(),'Inicio')]' contains exact text 'Inicio'.</msg>
+<status status="PASS" starttime="20221213 18:27:21.997" endtime="20221213 18:27:22.013"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.996" endtime="20221213 18:27:22.013"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:22.305" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-847.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-847.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:22.013" endtime="20221213 18:27:22.305"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:22.013" endtime="20221213 18:27:22.305"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:21.950" endtime="20221213 18:27:22.305"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_CS</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:22.305" endtime="20221213 18:27:22.963"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:22.964" endtime="20221213 18:27:22.984"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:22.964" endtime="20221213 18:27:22.984"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:22.986" level="INFO">Verifying element 'xpath=//img[@alt='Claro Sports']' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:22.984" endtime="20221213 18:27:23.006"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:22.984" endtime="20221213 18:27:23.006"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:23.167" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-848.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-848.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:23.006" endtime="20221213 18:27:23.167"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.006" endtime="20221213 18:27:23.168"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:22.305" endtime="20221213 18:27:23.168"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_catalogo</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.168" endtime="20221213 18:27:23.189"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.196" endtime="20221213 18:27:23.216"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.189" endtime="20221213 18:27:23.216"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:23.218" level="INFO">Verifying element 'xpath=//div[contains(text(),'Catálogo')]' contains exact text 'Catálogo'.</msg>
+<status status="PASS" starttime="20221213 18:27:23.216" endtime="20221213 18:27:23.240"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.216" endtime="20221213 18:27:23.240"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:23.401" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-849.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-849.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:23.240" endtime="20221213 18:27:23.401"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.240" endtime="20221213 18:27:23.401"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.168" endtime="20221213 18:27:23.401"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_generos</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.402" endtime="20221213 18:27:23.428"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.433" endtime="20221213 18:27:23.456"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.428" endtime="20221213 18:27:23.456"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:23.458" level="INFO">Verifying element 'xpath=//div[contains(text(),'Géneros')] ' contains exact text 'Géneros'.</msg>
+<status status="PASS" starttime="20221213 18:27:23.456" endtime="20221213 18:27:23.480"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.456" endtime="20221213 18:27:23.480"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:23.646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-850.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-850.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:23.480" endtime="20221213 18:27:23.646"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.480" endtime="20221213 18:27:23.646"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.402" endtime="20221213 18:27:23.646"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_compra</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.646" endtime="20221213 18:27:23.672"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.673" endtime="20221213 18:27:23.693"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.672" endtime="20221213 18:27:23.693"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:23.695" level="INFO">Verifying element 'xpath=//div[contains(text(),'Compra y Renta')] ' contains exact text 'Compra y Renta'.</msg>
+<status status="PASS" starttime="20221213 18:27:23.694" endtime="20221213 18:27:23.714"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.694" endtime="20221213 18:27:23.714"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:23.860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-851.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-851.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:23.714" endtime="20221213 18:27:23.861"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.714" endtime="20221213 18:27:23.861"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.646" endtime="20221213 18:27:23.861"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_canales</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.861" endtime="20221213 18:27:23.889"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:23.889" endtime="20221213 18:27:23.909"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.889" endtime="20221213 18:27:23.909"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:23.911" level="INFO">Verifying element 'xpath=//div[contains(text(),'Canales')] ' contains exact text 'Canales'.</msg>
+<status status="PASS" starttime="20221213 18:27:23.910" endtime="20221213 18:27:23.930"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.909" endtime="20221213 18:27:23.930"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:24.089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-852.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-852.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:23.930" endtime="20221213 18:27:24.089"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.930" endtime="20221213 18:27:24.089"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:23.861" endtime="20221213 18:27:24.089"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_kids</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.090" endtime="20221213 18:27:24.114"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.114" endtime="20221213 18:27:24.133"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.114" endtime="20221213 18:27:24.133"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:24.138" level="INFO">Verifying element 'xpath=//img[@alt='Kids'] ' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:24.134" endtime="20221213 18:27:24.160"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.133" endtime="20221213 18:27:24.160"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:24.309" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-853.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-853.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:24.160" endtime="20221213 18:27:24.309"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.160" endtime="20221213 18:27:24.309"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.090" endtime="20221213 18:27:24.309"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_miscontenidos</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.310" endtime="20221213 18:27:24.338"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.338" endtime="20221213 18:27:24.357"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.338" endtime="20221213 18:27:24.357"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:24.359" level="INFO">Verifying element 'xpath=//div[contains(text(),'Mis Contenidos')] ' contains exact text 'Mis Contenidos'.</msg>
+<status status="PASS" starttime="20221213 18:27:24.357" endtime="20221213 18:27:24.378"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.357" endtime="20221213 18:27:24.378"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:24.555" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-854.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-854.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:24.378" endtime="20221213 18:27:24.556"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.378" endtime="20221213 18:27:24.556"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.310" endtime="20221213 18:27:24.556"/>
+</iter>
+<iter>
+<var name="${element}">home_nodo_musica</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.556" endtime="20221213 18:27:24.583"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.583" endtime="20221213 18:27:24.599"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.583" endtime="20221213 18:27:24.599"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:24.602" level="INFO">Verifying element 'xpath=//img[@alt='Claro música'] ' contains exact text ''.</msg>
+<status status="PASS" starttime="20221213 18:27:24.600" endtime="20221213 18:27:24.616"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.600" endtime="20221213 18:27:24.616"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:24.772" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-855.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-855.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:24.616" endtime="20221213 18:27:24.772"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.616" endtime="20221213 18:27:24.773"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.556" endtime="20221213 18:27:24.773"/>
+</iter>
+<iter>
+<var name="${element}">home_superdestacados</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.773" endtime="20221213 18:27:24.800"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:24.800" endtime="20221213 18:27:24.817"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:24.800" endtime="20221213 18:27:24.817"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:24.819" level="INFO">Verifying element 'xpath=//*[@class='jcarousel carousel-destacado']' contains exact text ''.</msg>
+<msg timestamp="20221213 18:27:25.317" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-screenshot-721.png"&gt;&lt;img src="../Resultados/screenshots/selenium-screenshot-721.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221213 18:27:25.333" level="FAIL">The text of element 'xpath=//*[@class='jcarousel carousel-destacado']' should have been '' but it was 'RENTAR'.</msg>
+<status status="FAIL" starttime="20221213 18:27:24.817" endtime="20221213 18:27:25.333"/>
+</kw>
+<status status="FAIL" starttime="20221213 18:27:24.817" endtime="20221213 18:27:25.333"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:25.699" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-856.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-856.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:25.333" endtime="20221213 18:27:25.699"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.333" endtime="20221213 18:27:25.699"/>
+</kw>
+<status status="FAIL" starttime="20221213 18:27:24.773" endtime="20221213 18:27:25.699"/>
+</iter>
+<iter>
+<var name="${element}">home_recomienda</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:25.700" endtime="20221213 18:27:25.717"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:25.717" endtime="20221213 18:27:25.733"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.717" endtime="20221213 18:27:25.733"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:25.733" level="INFO">Verifying element 'xpath=//div[contains(@class, 'pull-left') and contains(., 'Claro video te recomienda')] ' contains exact text 'Claro video te recomienda'.</msg>
+<status status="PASS" starttime="20221213 18:27:25.733" endtime="20221213 18:27:25.764"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.733" endtime="20221213 18:27:25.764"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:25.924" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-857.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-857.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:25.764" endtime="20221213 18:27:25.924"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.764" endtime="20221213 18:27:25.924"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.699" endtime="20221213 18:27:25.924"/>
+</iter>
+<iter>
+<var name="${element}">home_carrusel_recomienda</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:25.925" endtime="20221213 18:27:25.964"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 18:27:25.965" endtime="20221213 18:27:26.002"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.965" endtime="20221213 18:27:26.002"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221213 18:27:26.007" level="INFO">Verifying element 'xpath=//section[@class='section-carrousel section-recommended horizontal']' contains exact text 'Claro video te recomienda'.</msg>
+<status status="PASS" starttime="20221213 18:27:26.003" endtime="20221213 18:27:26.272"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:26.003" endtime="20221213 18:27:26.272"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Capture Element Screenshot" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20221213 18:27:26.456" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-element-screenshot-858.png"&gt;&lt;img src="../Resultados/screenshots/selenium-element-screenshot-858.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:26.273" endtime="20221213 18:27:26.456"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:26.272" endtime="20221213 18:27:26.456"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:25.924" endtime="20221213 18:27:26.456"/>
+</iter>
+<iter>
+<var name="${element}">home_paramount</var>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${a1['${element}']}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20221213 18:27:47.162" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-screenshot-722.png"&gt;&lt;img src="../Resultados/screenshots/selenium-screenshot-722.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221213 18:27:47.163" level="FAIL">Element 'xpath=//div[contains(@class, 'pull-left') and contains(., 'Paramount+ incluido en Claro video')]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20221213 18:27:26.457" endtime="20221213 18:27:47.164"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Wait Until Element is Visible</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20221213 18:27:47.165" endtime="20221213 18:27:47.166"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>element text should be</arg>
+<arg>${a1['${element}']}</arg>
+<arg>${a2['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20221213 18:27:47.166" endtime="20221213 18:27:47.166"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>capture element screenshot</arg>
+<arg>${a1['${element}']}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20221213 18:27:47.166" endtime="20221213 18:27:47.166"/>
+</kw>
+<status status="FAIL" starttime="20221213 18:27:26.456" endtime="20221213 18:27:47.166"/>
+</iter>
+<status status="FAIL" starttime="20221213 18:27:21.067" endtime="20221213 18:27:47.166"/>
+</for>
+<status status="FAIL" starttime="20221213 18:27:21.066" endtime="20221213 18:27:47.167"/>
+</kw>
+<kw name="-VALIDAR TEXTOS Y ELEMENTOS-" library="libraries_keywords">
+<arg>${elementos_home_page}</arg>
+<arg>${textos_home_page}</arg>
+<status status="NOT RUN" starttime="20221213 18:27:47.168" endtime="20221213 18:27:47.168"/>
+</kw>
+<kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
+<status status="NOT RUN" starttime="20221213 18:27:47.168" endtime="20221213 18:27:47.168"/>
+</kw>
+<kw name="-TERMINAR CONFIGURACIÓN TESTCASE-" library="libraries_keywords" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221213 18:27:47.727" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-screenshot-723.png"&gt;&lt;img src="../Resultados/screenshots/selenium-screenshot-723.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:47.170" endtime="20221213 18:27:47.727"/>
+</kw>
+<status status="PASS" starttime="20221213 18:27:47.170" endtime="20221213 18:27:47.727"/>
+</kw>
+<status status="FAIL" starttime="20221213 18:26:53.874" endtime="20221213 18:27:47.731">Several failures occurred:
+
+1) The text of element 'xpath=//*[@class='jcarousel carousel-destacado']' should have been '' but it was 'RENTAR'.
+
+2) Element 'xpath=//div[contains(@class, 'pull-left') and contains(., 'Paramount+ incluido en Claro video')]' not visible after 5 seconds.</status>
 </test>
 <kw name="-TERMINAR CONFIGURACIÓN SUITETEST-" library="libraries_keywords" type="TEARDOWN">
 <kw name="-DESCARGAR SESION CHARLES-" library="libraries_keywords">
-<kw name="download_charles_proxy_session_recording">
-<msg timestamp="20221007 14:01:46.622" level="FAIL">No keyword with name 'download_charles_proxy_session_recording' found.</msg>
-<status status="FAIL" starttime="20221007 14:01:46.622" endtime="20221007 14:01:46.622"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:48.752" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221213 18:27:47.736" endtime="20221213 18:27:48.752"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.616" endtime="20221007 14:01:46.623"/>
+<status status="PASS" starttime="20221213 18:27:47.735" endtime="20221213 18:27:48.752"/>
 </kw>
 <kw name="-DETENER GRABACION CHARLES-" library="libraries_keywords">
-<kw name="stop_charles_proxy_session_recording">
-<msg timestamp="20221007 14:01:46.629" level="FAIL">No keyword with name 'stop_charles_proxy_session_recording' found.</msg>
-<status status="FAIL" starttime="20221007 14:01:46.629" endtime="20221007 14:01:46.629"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:49.765" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221213 18:27:48.755" endtime="20221213 18:27:49.765"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.623" endtime="20221007 14:01:46.630"/>
+<status status="PASS" starttime="20221213 18:27:48.752" endtime="20221213 18:27:49.766"/>
 </kw>
 <kw name="Capture Page Screenshot" library="Selenium2Library">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20221007 14:01:46.630" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20221007 14:01:46.630" endtime="20221007 14:01:46.630"/>
+<msg timestamp="20221213 18:27:50.105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Resultados/screenshots/selenium-screenshot-724.png"&gt;&lt;img src="../Resultados/screenshots/selenium-screenshot-724.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221213 18:27:49.766" endtime="20221213 18:27:50.105"/>
 </kw>
 <kw name="-CERRAR TODOS LOS NAVEGADORES-" library="libraries_keywords">
 <kw name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20221007 14:01:46.630" endtime="20221007 14:01:46.630"/>
+<status status="PASS" starttime="20221213 18:27:50.106" endtime="20221213 18:27:52.363"/>
 </kw>
-<status status="PASS" starttime="20221007 14:01:46.630" endtime="20221007 14:01:46.631"/>
+<status status="PASS" starttime="20221213 18:27:50.106" endtime="20221213 18:27:52.363"/>
 </kw>
 <kw name="-CERRAR CHARLES-" library="libraries_keywords">
-<kw name="terminate_all_charles_proxy_sessions">
-<msg timestamp="20221007 14:01:46.640" level="FAIL">No keyword with name 'terminate_all_charles_proxy_sessions' found.</msg>
-<status status="FAIL" starttime="20221007 14:01:46.640" endtime="20221007 14:01:46.640"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 18:27:53.369" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221213 18:27:52.364" endtime="20221213 18:27:53.369"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.631" endtime="20221007 14:01:46.640"/>
+<status status="PASS" starttime="20221213 18:27:52.363" endtime="20221213 18:27:53.369"/>
 </kw>
-<status status="FAIL" starttime="20221007 14:01:46.616" endtime="20221007 14:01:46.641">Several failures occurred:
-
-1) No keyword with name 'download_charles_proxy_session_recording' found.
-
-2) No keyword with name 'stop_charles_proxy_session_recording' found.
-
-3) No keyword with name 'terminate_all_charles_proxy_sessions' found.</status>
+<status status="PASS" starttime="20221213 18:27:47.735" endtime="20221213 18:27:53.369"/>
 </kw>
 <doc>MÉXICO- suitetest Regression (NA)</doc>
-<status status="FAIL" starttime="20221007 14:01:46.266" endtime="20221007 14:01:46.641">Suite setup failed:
-No keyword with name 'start_charles_proxy_in_headless_mode' found.
-
-Also suite teardown failed:
-Several failures occurred:
-
-1) No keyword with name 'download_charles_proxy_session_recording' found.
-
-2) No keyword with name 'stop_charles_proxy_session_recording' found.
-
-3) No keyword with name 'terminate_all_charles_proxy_sessions' found.</status>
+<status status="FAIL" starttime="20221213 18:26:51.560" endtime="20221213 18:27:53.369"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="CV-MX-WEB-NA">CV-MX-WEB-NA</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="CV-MX-WEB-NA-JS">CV-MX-WEB-NA-JS</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221007 14:01:46.522" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\tests_keywords.robot' on line 6: Library '..\..\resources\charles_proxy\charles_library.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.529" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 34: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\loginPage\elementos_login_email.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.531" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 35: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\loginPage\textos_elementos_login_email.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.533" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 36: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\loginPage\elementos_login_pass.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.535" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 37: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\loginPage\textos_elementos_login_pass.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.538" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 38: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\anonymousLandingPage\elementos-landing-anonimo.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.540" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 39: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\anonymousLandingPage\textos-landing-anonimo.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.542" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 40: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\paymentPage\elements_payment_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.544" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 41: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\paymentPage\labels_payment_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.546" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 42: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\paymentPage\textos_promos_labels_payment_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.549" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 43: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\paymentPage\textos_promos_payment_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.551" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 44: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\HomePage\elementos_home_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.553" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 45: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\HomePage\textos_home_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.555" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 46: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\conocelaspromocionesPage\elementos_conocePromos.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.558" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 47: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\registerPage\elementos-registerPage.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.560" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 48: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\registerPage\textos-elementos-registerPage.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.563" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 49: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\terminosyCondicionesPage\elementos_terminosycondiciones.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.566" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 50: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\registerPage\textos-elementos-registerPage-pass.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.569" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 51: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\registerPage\elementos-registerPage-pass.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.571" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 52: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\profilesPage\elementos_profile_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.573" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 53: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\HomePage\profile_menu_page.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.576" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 54: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\CV-POM\PoliticasPrivacidadPage\politicas_de_privacidad.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.578" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\variables.robot' on line 58: Variable file 'C:UsersHitssDesktopATMWEBqc-web-mx\resources\common_functionalities\email_random.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.589" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\libraries_keywords.robot' on line 6: Library '..\..\resources\charles_proxy\charles_library.py' does not exist.</msg>
-<msg timestamp="20221007 14:01:46.600" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\libraries_keywords.robot' on line 10: Importing library 'ExcelLibrary' failed: ModuleNotFoundError: No module named 'ExcelLibrary'
+<msg timestamp="20221213 18:26:51.860" level="ERROR">Error in file 'C:\Users\Hitss\Desktop\ATMWEB\qc-web-mx\resources\common_functionalities\libraries_keywords.robot' on line 11: Importing library 'ExcelLibrary' failed: ModuleNotFoundError: No module named 'ExcelLibrary'
 Traceback (most recent call last):
   None
 PYTHONPATH:

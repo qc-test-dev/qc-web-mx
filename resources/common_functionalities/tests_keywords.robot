@@ -13,6 +13,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
 *** Keywords ***
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
+<<<<<<< HEAD
     wait until element is visible     ${elemento}
     click element     ${elemento}
 
@@ -20,6 +21,26 @@ Resource      ../common_functionalities/libraries_keywords.robot
         [Arguments]   ${elemento}
         wait until element is visible     ${elemento}
 
+=======
+    Wait Until Element Is Visible   ${elemento}
+    click element     ${elemento}
+
+-GET TEXT-
+    [Arguments]   ${elemento}
+    get text    ${elemento}
+
+
+-ABRIR REGISTER PAGE-
+  # -OPEN chrome-      ${url_register_page}
+    OPEN BROWSER       ${url_register_page}     ${browser}
+   #-OPEN WEBSITE-   ${url_register_page}
+
+-ABRIR LOGIN PAGE-
+   OPEN BROWSER   ${url_login_page}     ${browser}
+   Set Window Size     1200   1200
+
+   #-OPEN WEBSITE-  ${url_login_page}
+>>>>>>> dev_aj
 
 
 -INGRESAR TEXTO-
@@ -45,7 +66,11 @@ Resource      ../common_functionalities/libraries_keywords.robot
    Set Window Size    1200    1000
 
 -ABRIR PAYMENT PAGE-
+<<<<<<< HEAD
    -LOGIN HOME CV-    ${email}   ${password}
+=======
+   -LOGIN HOME CV-     ${email}   ${password}
+>>>>>>> dev_aj
    go to   ${url_payment_page}
 
 -LOGIN HOME CV-
@@ -76,7 +101,43 @@ Resource      ../common_functionalities/libraries_keywords.robot
   -INGRESAR PASSWORD PARA LOGIN-     ${password}
    wait until page contains element    xpath=//div[@class='_l88cd _2hS3x']
 
+-INGRESAR TEXTO PARA SEARCH WRONG WORD-
+  [Arguments]                        ${Busqueda_fake}
+   wait until element is visible     ${Elementos_Search['buscador']}
+   input text                        ${Elementos_Search['buscador']}       ${Busqueda_fake}
+   Press Keys    ${Elementos_Search['Buscar']}    ENTER
+   Element Should Be Visible   ${Elementos_Search['Sorry']}
+   Sleep    8
 
+-INGRESAR TEXTOS PARA SEARCH CyR-
+  [Arguments]                        ${Renta}  ${Compra}
+   wait until element is visible     ${Elementos_Search['buscador']}
+   input text                        ${Elementos_Search['buscador']}       ${Renta}
+   Press Keys    ${Elementos_Search['Buscar']}    ENTER
+   Element Should Be Visible   ${Elementos_Search['Renta']}
+   Sleep  8
+   Input Text    ${Elementos_Search['buscador']}    ${Compra}
+   Press Keys    ${Elementos_Search['Buscar']}    ENTER
+   Element Should Be Visible   ${Elementos_Search['Compra']}
+   Sleep    8
+
+-INGRESAR TEXTOS PARA SEARCH-
+  [Arguments]                        ${Canal_fake}
+   wait until element is visible     ${Elementos_Search['buscador']}
+   input text                        ${Elementos_Search['buscador']}       ${Canal_fake}
+   click button                      ${Elementos_Search['buscador']}
+   Sleep    8
+
+-VALIDAR TEXTOS Y ELEMENTOS LIVE TV NO ESTEN Y ESTEN-
+  [Arguments]                        ${Canal_fake}  ${Canal_LiveTV}
+  wait until element is visible     ${Elementos_Search['buscador']}
+  input text                        ${Elementos_Search['buscador']}       ${Canal_fake}
+  Element Should Not Be Visible   ${Elementos_Search['Canales_TV']}
+  Sleep  5
+  Press Keys    ${Elementos_Search['Buscar']}    ENTER
+  input text                        ${Elementos_Search['buscador']}       ${Canal_LiveTV}
+  Element Should Be Visible      ${Elementos_Search['Canales_TV']}
+  Sleep  5
 
 
 -INGRESAR EMAIL PARA LOGIN-
@@ -148,7 +209,21 @@ Resource      ../common_functionalities/libraries_keywords.robot
   wait until page contains element    ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
   click element   ${elementos_nodo_catalogo_page['catalogo_subnodo_series']}
 
+<<<<<<< HEAD
 
 
+=======
+-open_Chromium_jenkins-
+	[Arguments]           ${url}
+	${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+	Call Method    ${chrome_options}    add_argument    test-type
+	Call Method    ${chrome_options}    add_argument    --disable-extensions
+	Call Method    ${chrome_options}    add_argument    --headless
+	Call Method    ${chrome_options}    add_argument    --disable-gpu
+	Call Method    ${chrome_options}    add_argument    --no-sandbox
+	Open Browser   ${url}    chrome     chrome_options=${chrome_options}  executable_path=/usr/bin/google-chrome
 
+#-ABRIR REGISTER PAGE-
+ #   -open_Chromium_jenkins-    ${url_register_page}
+>>>>>>> dev_aj
 
