@@ -190,9 +190,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
     OPEN BROWSER       ${url_register_page}     ${browser}
      Set Window Size    1200    1000
 
--ABRIR LOGIN PAGE-
-   OPEN BROWSER   ${url_login_page}     ${browser}
-    Set Window Size    1200    1000
 
 -ABRIR LANDIND PAGE-
   open browser     ${url_landing_page}    ${browser}
