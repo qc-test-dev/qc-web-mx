@@ -8,8 +8,8 @@
 # }
 
 elementos_login_pass={
-    'log_pass_title': 'xpath=//span[normalize-space()="Inicia sesión"]',
-    'log_pass_passText': 'xpath=//span[normalize-space()="Contraseña"]',
+    'log_pass_title': 'xpath=//*[contains(@class, "_3-Imn") and contains(.,//@span)]',
+    'log_pass_passText': 'xpath=//*[contains(@class, "_2eE9y _3RJEJ") and contains(.,//@span)]',
     'reg_pass_passtextbox' : 'xpath=//input[@id="password"]',
     'log_pass_siguiente': 'xpath=//button[@id="submitPassword"]',
     'log_pass_cancelar': 'xpath=//button[normalize-space()="CANCELAR"]',
