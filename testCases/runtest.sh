@@ -10,7 +10,7 @@ do
   declare  fecha=$(date +"%m_%d_%Y_%H:%M:%S")
   export   TESTNAME="$testname"
   #pabot --processes 1   --outputdir   Resultados/${fecha}   testCases/CV-MX-WEB-ACCESO.robot
-  robot --outputdir    ../Resultados/${TESTNAME}${fecha}     ${TESTNAME}.robot
+  robot --outputdir    ../Resultados/     ${TESTNAME}.robot
 done
 #networksetup -setwebproxystate Wi-Fi off &&networksetup -setsecurewebproxystate Wi-Fi off &&networksetup -disconnectpppoeservice "uat-mx"
 
