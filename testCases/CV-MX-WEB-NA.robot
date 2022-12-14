@@ -14,8 +14,8 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 #   -ABRIR LANDIND PAGE-
 #   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_landing_anonimo}     ${textos_landing_anonimo}
 #   -CERRAR TODOS LOS NAVEGADORES-
-#
-#
+
+
 #CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
 #   -ABRIR LOGIN PAGE-
 #   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_email}     ${textos_elementos_login_email}
@@ -24,44 +24,6 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 #   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
 #   -CERRAR TODOS LOS NAVEGADORES-
 
-#CV-WEB-NAVEGACION-VALIDAR ELEMENTOS PROFILES PAGE
-#   -ABRIR LOGIN PAGE-
-#   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-#   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-#   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_profile_page}     ${textos_elementos_profile_page}
-#   -CLICK ELEMENTO-       ${elementos_profile_page['selectProfile_1_image']}
-#   -CERRAR TODOS LOS NAVEGADORES-
-
-CV-WEB-NAVEGACION-VALIDAR ELEMENTOS-NODO HOME PAGE
-   -ABRIR LOGIN PAGE-
-   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-   -CLICK ELEMENTO-       ${elementos_profile_page['selectProfile_1_image']}
-    #-CLICK ELEMENTO-       ${elementos_home_page['home_ticker_close']}
-    -Sleep-
-   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_home_page}     ${textos_home_page}
-   -CERRAR TODOS LOS NAVEGADORES-
-
-CV-WEB-SEARCH CANALES NO EXISTENTES
-   -ABRIR LOGIN PAGE-
-   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-   -CLICK ELEMENTO-       ${elementos_profile_page['selectProfile_1_image']}
-   -CLICK ELEMENTO-     ${Elementos_Search['buscador']}
-   -INGRESAR TEXTO PARA SEARCH-   ${Elementos_Search['buscador']}      ${Canal fake}
-   -CERRAR TODOS LOS NAVEGADORES-
-
-#CV-WEB-NAVEGACION-SEARCH RENTA/COMPRA SUPERDESTACADOS
-#   -ABRIR LOGIN PAGE-
-#   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-#   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-#   -CLICK ELEMENTO-       ${elementos_profile_page['selectProfile_1_image']}
-#   -CLICK ELEMENTO-     ${Elementos_Search['home_destacado_renta-c']}
-#   -GET TEXT-   ${Elementos_Search}   ${Titulo_SDestacado}
-#   -CLICK ELEMENTO-     ${Elementos_Search['input_buscador']}
-#   Input Text    ${Elementos_Search['Titulo_SDestacado']}
-#
-#   -CERRAR TODOS LOS NAVEGADORES-
 
 #CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE
  # -ABRIR REGISTER PAGE-
@@ -69,7 +31,7 @@ CV-WEB-SEARCH CANALES NO EXISTENTES
 
 
 #CV-WEB-ACCESO-VALIDAR LOGIN CON USUARIO CORRECTO
- #  -VALIDAR USUARIO CV-    ${email_valido}   ${pass_valido}
+ #  -VALIDAR USUARIO CV-
   # -CERRAR TODOS LOS NAVEGADORES-
 
 #CV-WEB-ACCESO-VALIDAR LOGIN CON PASSWORD INCORRECTO
