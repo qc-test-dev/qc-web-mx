@@ -16,13 +16,13 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 #   -CERRAR TODOS LOS NAVEGADORES-
 
 
-#CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
-#   -ABRIR LOGIN PAGE-
-#   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_email}     ${textos_elementos_login_email}
-#   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-#   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_pass}     ${textos_elementos_login_pass}
-#   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-#   -CERRAR TODOS LOS NAVEGADORES-
+CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
+   -ABRIR LOGIN PAGE-
+   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_email}     ${textos_elementos_login_email}
+   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
+   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_pass}     ${textos_elementos_login_pass}
+   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
+   -CERRAR TODOS LOS NAVEGADORES-
 
 
 #CV-WEB-NAVEGACION-VALIDAR ELEMENTOS REGISTER PAGE
@@ -37,6 +37,27 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 #CV-WEB-ACCESO-VALIDAR LOGIN CON PASSWORD INCORRECTO
  #  -VALIDAR USUARIO CV-    ${email_valido}   ${pass_novalido}
   # -CERRAR TODOS LOS NAVEGADORES-
+
+#CV-WEB-NAVEGACION-BUSCAR CONTENIDO
+#   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+#   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+#   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+#   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+#   -ESPERAR ELEMENTO-    ${elementos_VcardMovie_page['add_fav_button']}
+#
+#CV-WEB-NAVEGACION-AGREGAR CONTENIDO A MI LISTA
+#   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+#   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+#   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+#   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+#   -CLICK ELEMENTO-     ${elementos_VcardMovie_page['add_fav_button']}
+#
+#CV-WEB-NAVEGACION-ELIMINAR CONTENIDO DE MI LISTA DESDE VCARD
+#   -LOGIN HOME CV-      ${email_valido}    ${pass_valido}
+#   -CLICK ELEMENTO-     ${elementos_home_page['home_lupa']}
+#   -INGRESAR TEXTO-     ${elementos_home_page['home_input_placeholder']}    ${content_add_favs}
+#   -CLICK ELEMENTO-     ${search_tab_home['search_result_0']}
+#   -CLICK ELEMENTO-     ${elementos_VcardMovie_page['add_fav_button']}
 
 #CV-WEB-ACCESO-VALIDAR LOGOUT
 #

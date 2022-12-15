@@ -21,10 +21,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
     get text    ${elemento}
 
 
--ABRIR REGISTER PAGE-
-  # -OPEN chrome-      ${url_register_page}
-    OPEN BROWSER       ${url_register_page}     ${browser}
-   #-OPEN WEBSITE-   ${url_register_page}
+
 
 -ABRIR LOGIN PAGE-
    OPEN BROWSER   ${url_login_page}     ${browser}
@@ -47,13 +44,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
     Maximize Browser Window 
 
 
--ABRIR LANDIND PAGE-
-  open browser     ${url_landing_page}    ${browser}
-  #-OPEN WEBSITE-      ${url_landing_page}
-
-
--ABRIR POLITICAS PAGE-
-  open browser      ${url_politicas_page}    ${browser}
 
 -ABRIR PAYMENT PAGE-
    -LOGIN HOME CV-     ${email}   ${password}
@@ -208,6 +198,31 @@ Resource      ../common_functionalities/libraries_keywords.robot
 	Call Method    ${chrome_options}    add_argument    --no-sandbox
 	Open Browser   ${url}    chrome     chrome_options=${chrome_options}  executable_path=/usr/bin/google-chrome
 
-#-ABRIR REGISTER PAGE-
- #   -open_Chromium_jenkins-    ${url_register_page}
+
+
+-ESPERAR ELEMENTO-
+        [Arguments]   ${elemento}
+        wait until element is visible     ${elemento}
+
+-INGRESAR TEXTO-
+    [Arguments]                      ${elemento}   ${text}
+    input text                       ${elemento}   ${text}
+
+
+-ABRIR REGISTER PAGE-
+    OPEN BROWSER       ${url_register_page}     ${browser}
+     Set Window Size    1200    1000
+
+-ABRIR LOGIN PAGE-
+   OPEN BROWSER   ${url_login_page}     ${browser}
+    Set Window Size    1200    1000
+
+-ABRIR LANDIND PAGE-
+  open browser     ${url_landing_page}    ${browser}
+  Set Window Size    1200    1000
+
+-ABRIR POLITICAS PAGE-
+  open browser      ${url_politicas_page}    ${browser}
+   Set Window Size    1200    1000
+
 
