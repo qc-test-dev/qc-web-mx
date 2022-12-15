@@ -12,7 +12,9 @@ elementos_home_page = {
     "home_input_buscador": 'xpath=//input[@placeholder="Buscar"]',
     "home_lupa": "xpath=//i[@name='search']",
     "home_avatar": "xpath=//a[@class='dropdown-toggle dropdownUser menu_user custom-menu-user-style hidden-xs']//img[@class='menu_user--img']",
-#Nodos_Home
+    "home_input_placeholder": "xpath=//input[@placeholder='Buscar']",
+
+    #Nodos_Home
     "home_nodo_inicio": "xpath=//div[contains(text(),'Inicio')]",
     "home_nodo_CS": "xpath=//img[@alt='Claro Sports']",
     "home_nodo_catalogo": "xpath=//div[contains(text(),'Catálogo')]",
