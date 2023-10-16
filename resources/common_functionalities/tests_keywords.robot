@@ -13,7 +13,7 @@ Resource      ../common_functionalities/libraries_keywords.robot
 *** Keywords ***
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
-    Wait Until Element Is Visible   ${elemento}
+     Wait Until Page Contains Element  ${elemento}
     click element     ${elemento}
 
 -GET TEXT-
