@@ -4,6 +4,5 @@ Resultados/*
 *.pyc
 venv
 .idea
-resources/common_functionalities/variables.robot
 
 
