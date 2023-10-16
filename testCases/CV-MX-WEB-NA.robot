@@ -10,11 +10,6 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 
 *** Test Cases ***
 
-CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LANDING PAGE
-
-   -ABRIR LANDIND PAGE-
-   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_landing_anonimo}     ${textos_landing_anonimo}
-   -CERRAR TODOS LOS NAVEGADORES-
 
 
 CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
@@ -23,6 +18,14 @@ CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
    -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
    -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_pass}     ${textos_elementos_login_pass}
    -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
+   -CERRAR TODOS LOS NAVEGADORES-
+
+*** comment ***
+
+CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LANDING PAGE
+
+   -ABRIR LANDIND PAGE-
+   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_landing_anonimo}     ${textos_landing_anonimo}
    -CERRAR TODOS LOS NAVEGADORES-
 
 
@@ -136,10 +139,10 @@ CV-WEB-ACCESO-VALIDAR LOGOUT
  #   -ABRIR REGISTER PAGE-
   #  -CLICK TERMINOS Y PROMOCIONES TELMEX-      ${elementos_register_page['reg_terms_promo']}
    # -VALIDAR TEXTOS CON XLSX-     ${telmex_texto}      telmex         ${elementos_conocePromos['telmex_texto_promos']}
-
+#*
 CV-WEB-ACCESO-VALIDAR REGISTRO CON CUENTA NUEVA.
     -ABRIR REGISTER PAGE-
     -INGRESAR EMAIL PARA REGISTRO-    ${email_random_python}
     -INGRESAR PASSWORD PARA REGISTRO-  ${pass_valido_registro}
 
-#aa
+
