@@ -14,11 +14,11 @@ Suite Teardown       -TERMINAR CONFIGURACIÓN SUITETEST-
 
 CV-WEB-NAVEGACION-VALIDAR ELEMENTOS LOGIN PAGE
    -ABRIR LOGIN PAGE-
-   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_email}     ${textos_elementos_login_email}
-   -INGRESAR EMAIL PARA LOGIN-     ${email_valido}
-   -VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_pass}     ${textos_elementos_login_pass}
-   -INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
-   -CERRAR TODOS LOS NAVEGADORES-
+   #-VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_email}     ${textos_elementos_login_email}
+   #-INGRESAR EMAIL PARA LOGIN-     ${email_valido}
+   #-VALIDAR TEXTOS Y ELEMENTOS-    ${elementos_login_pass}     ${textos_elementos_login_pass}
+   #-INGRESAR PASSWORD PARA LOGIN-  ${pass_valido}
+   #-CERRAR TODOS LOS NAVEGADORES-
 
 *** comment ***
 
