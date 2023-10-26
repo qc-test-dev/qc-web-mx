@@ -25,11 +25,11 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 -ABRIR LOGIN PAGE-
-   OPEN BROWSER   ${url_login_page}  ${browser}  ${DESIRED_CAPABILITIES}   ${REMOTE_URL}
+   #Create Webdriver  Chrome  ${CHROME_OPTIONS}
+   OPEN BROWSER   ${url_login_page}  ${browser}  ${CHROME_OPTIONS}
    #-chromeheadless-      ${url_login_page}
-   Set Window Size     1200   1200
-   Sleep  30s
-   #-OPEN WEBSITE-  ${url_login_page}
+   #sSet Window Size     1200   1200
+   go to   ${url_login_page}
 
 
 
