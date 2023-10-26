@@ -1,5 +1,6 @@
 *** Settings ***
-Library        Selenium2Library       implicit_wait=20s
+#Library        Selenium2Library       implicit_wait=20s
+Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Process
 Library        Collections
@@ -12,6 +13,14 @@ Library	       ExcelLibrary
 
 *** Keywords ***
 # Charles Keywords
+
+-chromeheadless-
+    [Arguments]    ${url}
+    ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome options}    add_argument    --headless
+    Set Selenium Implicit Wait    2 seconds
+    Open Browser    ${url}   chrome   chrome_options=${chrome options}
+    Set Window Size    400  400
 -ABRIR CHARLES-
     #start_charles_proxy_in_headless_mode
     Sleep   1
@@ -31,10 +40,10 @@ Library	       ExcelLibrary
     Sleep   1
 #Suites and tests configurations
 -CERRAR TODOS LOS NAVEGADORES-
-    close all browsers
+    Close All Browsers
 
 -CONFIGURAR DIRECTORIO SCREENSHOTS-
-    set screenshot directory         ${screenshots-folder}
+    SeleniumLibrary.Set Screenshot Directory      ${screenshots-folder}
 
 -CONFIGURACIÓN INICIAL SUITETEST-
     -ABRIR CHARLES-
@@ -43,7 +52,7 @@ Library	       ExcelLibrary
 -TERMINAR CONFIGURACIÓN SUITETEST-
    -DESCARGAR SESION CHARLES-
    -DETENER GRABACION CHARLES-
-    capture page screenshot
+    #capture page screenshot
     -CERRAR TODOS LOS NAVEGADORES-
     -CERRAR CHARLES-
 
@@ -51,7 +60,7 @@ Library	       ExcelLibrary
    -CONFIGURAR DIRECTORIO SCREENSHOTS-
 
 -TERMINAR CONFIGURACIÓN TESTCASE-
-     capture page screenshot
+     Capture Page Screenshot
 
 
 

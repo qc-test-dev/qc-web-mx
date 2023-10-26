@@ -1,6 +1,19 @@
+*** Settings ***
+Library    Process
+#Library        SeleniumLibrary
+Library        SeleniumLibrary
 *** Variables ***
 #variables globales
-${browser}            chrome
+${chrome_options}       add_argument(“–headless”); add_argument(“no-sandbox”)
+${chrome}              chrome
+${browser}  chrome
+${platformName}  Windows 10
+${sauce_username}  oauth-qc.test.dev-bc290
+${sauce_access_key}  2ce10703-c6f4-471f-99cf-8d8b254d2a1e
+${REMOTE_URL}  https://${sauce_username}:${sauce_access_key}@ondemand.us-west-1.saucelabs.com:443/wd/hub
+${chrome_saucelabs_capabilities}    00
+${DESIRED_CAPABILITIES}  platform_name:${platformName},browser:${browser},browser_version:latest
+${DESIRED_CAPABILITIES_WEB_CHROME}  platformName:Windows 11,browserVersion:latest
 ${jenkins-chrome}       chrome
 ${browser-firefox}      firefox
 ${browser-safari}       safari

@@ -4,4 +4,7 @@ selenium
 robotframework-excellibrary-xwfintech
 robotframework-selenium2library
 robotframework-seleniumlibrary
-selenium-testing-library
+saucebindings==1.0.0
+sauceclient==1.0.0
+
+

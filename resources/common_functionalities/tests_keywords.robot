@@ -1,5 +1,6 @@
 *** Settings ***
-Library        Selenium2Library       implicit_wait=20s
+#Library        Selenium2Library       implicit_wait=20s
+Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Process
 Library        Collections
@@ -24,9 +25,10 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 -ABRIR LOGIN PAGE-
-   OPEN BROWSER   ${url_login_page}     ${browser}
+   OPEN BROWSER   ${url_login_page}  ${browser}  ${DESIRED_CAPABILITIES}   ${REMOTE_URL}
+   #-chromeheadless-      ${url_login_page}
    Set Window Size     1200   1200
-
+   Sleep  30s
    #-OPEN WEBSITE-  ${url_login_page}
 
 
