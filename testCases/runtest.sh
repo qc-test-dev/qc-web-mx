@@ -1,8 +1,8 @@
 #!/bin/bash
 
-declare -a tests=(CV-MX-WEB-NA)
+#declare -a tests=(CV-MX-WEB-NA,BRF_validacion_tarifas.robot)
+declare -a tests=(BRF_validacion_tarifas)
 #killall -9 charles||killall -9 Charles;networksetup -connectpppoeservice "uat-mx"
-#charles -headless -config  ../com.xk72.charles.config -bg
 #./sc -u oauth-qc.test.dev-bc290 -k 2ce10703-c6f4-471f-99cf-8d8b254d2a1e --region us-west --tunnel-name oauth-qc.test.dev-bc290_tunnel_name
 
 for testname in "${tests[@]}"

@@ -5,8 +5,9 @@ Library        SeleniumLibrary
 *** Variables ***
 #variables globales
 #${chrome_options}       add_argument(“–headless”); add_argument(“no-sandbox”)
-${browser}  headlesschrome
-${CHROME_OPTIONS}  add_argument('–-headless'); add_argument('no-sandbox'); add_argument('-log-path=/Users/at/Desktop/qc/automation/QC_WEB_MX/qc-web-mx/testCases/chromedriver.log')
+${browser}  safari
+${browser_sauceLabs}  ${DESIRED_CAPABILITIES}  ${REMOTE_URL}
+#${CHROME_OPTIONS}  add_argument('–-headless'); add_argument('no-sandbox'); add_argument('-log-path=/Users/at/Desktop/qc/automation/QC_WEB_MX/qc-web-mx/testCases/chromedriver.log')
 ${platformName}  Windows 10
 ${sauce_username}  oauth-qc.test.dev-bc290
 ${sauce_access_key}  2ce10703-c6f4-471f-99cf-8d8b254d2a1e
@@ -16,14 +17,17 @@ ${DESIRED_CAPABILITIES}  platform_name:${platformName},browser:${browser},browse
 
 
 
-${email_valido}         s_tamezaa@globalhitss.com
+${email_valido}         qc_${paisCuenta}_roku@gmail.com
 ${email_novalido}       ss_tamezaa@globalhitss.com
-${pass_valido}          Claro123!
+${pass_valido}          Claro123
 ${pass_valido_registro}    Claro123
 ${pass_novalido}        Claro123
 ${email_gratis}         abc0000000000000023@gmail.com
 ${pass_gratis}          Claro123
 ${content_add_favs}        jumanji
+${pais_cuenta}  mx
+${pais}  mexico
+${id}  0
 
 #DirPaths
 ${localpath}               /Users/at/Desktop/qc/automation/QC_WEB_MX/qc-web-mx
@@ -35,12 +39,13 @@ ${telmex_texto}                 ${localpath}/testData/telmex.xls
 
 
 #urls
-${url_register_page}            https://www.clarovideo.com/mexico/register
-${url_login_page}               https://www.clarovideo.com/mexico/login
-${url_landing_page}             https://www.clarovideo.com/mexico/landing
-${url_payment_page}             https://www.clarovideo.com/mexico/payment
+${url_register_page}            https://www.clarovideo.com/${pais}/register
+${url_login_page}               https://www.clarovideo.com/${pais}/login
+${url_landing_page}             https://www.clarovideo.com/${pais}/landing
+${url_payment_page}             https://www.clarovideo.com/${pais}/payment
 ${url_politicas_page}           https://www.clarovideo.com/politicas_de_privacidad
 ${url_licenciaUsuario_page}     https://www.clarovideo.com/licencia_usuario_final
+${url_get_vcard_id}     https://www.clarovideo.com/${pais}/vcard/homeuser/Herederos%20por%20accidente/${id}
 
 *** Settings ***
 #importar variables de elementos web desde diccionanarios .py
@@ -68,6 +73,7 @@ Variables      ${path_cv-pom}/HomePage/profile_menu_page.py
 Variables      ${path_cv-pom}/HomePage/search_tab_home.py
 Variables      ${path_cv-pom}/PoliticasPrivacidadPage/politicas_de_privacidad.py
 Variables      ${path_cv-pom}/vcardMoviePage/elementos_VcardMovie_page.py
+
 
 
 #importar variables de funciones .py

@@ -1,10 +1,10 @@
-robotframework
+robotframework==6
 requests
-selenium
+selenium==6
 robotframework-excellibrary-xwfintech
-robotframework-selenium2library
 robotframework-seleniumlibrary
 saucebindings==1.0.0
 sauceclient==1.0.0
+RPAFramework
 
 

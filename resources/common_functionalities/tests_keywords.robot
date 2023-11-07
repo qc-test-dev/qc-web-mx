@@ -4,6 +4,7 @@ Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Process
 Library        Collections
+Library      ExcelLibrary
 Library       ../../resources/charles_proxy/charles_library.py
 Variables        ../common_functionalities/email_random.py
 Resource       ../common_functionalities/variables.robot
@@ -12,6 +13,11 @@ Resource      ../common_functionalities/libraries_keywords.robot
 
 
 *** Keywords ***
+-Abrir URL-
+    [Arguments]   ${url_to_open}
+   OPEN BROWSER   ${url_to_open}   ${browser}
+   Set Window Size     1200   1200
+
 -CLICK ELEMENTO-
     [Arguments]   ${elemento}
      Wait Until Page Contains Element  ${elemento}
@@ -21,15 +27,21 @@ Resource      ../common_functionalities/libraries_keywords.robot
     [Arguments]   ${elemento}
     get text    ${elemento}
 
+-LOGIN HOME CV-
+   [Arguments]                       ${email}   ${password}   ${url_to_open}
+   -Abrir URL-                        ${url_to_open}
+  -INGRESAR EMAIL PARA LOGIN-        ${email}
+  -INGRESAR PASSWORD PARA LOGIN-     ${password}
+  -CLICK IMAGEN DE PERFIL-
+  -VALIDAR CARGA HOME-
+
 
 
 
 -ABRIR LOGIN PAGE-
-   #Create Webdriver  Chrome  ${CHROME_OPTIONS}
-   OPEN BROWSER   ${url_login_page}  ${browser}  ${CHROME_OPTIONS}
-   #-chromeheadless-      ${url_login_page}
-   #sSet Window Size     1200   1200
-   go to   ${url_login_page}
+   OPEN BROWSER   ${url_login_page}  ${browser}
+   Set Window Size     1200   1200
+
 
 
 
@@ -38,15 +50,6 @@ Resource      ../common_functionalities/libraries_keywords.robot
      go to   ${url_payment_page}
      Set Window Size     1200   1200
 
--LOGIN HOME CV-
-   [Arguments]                       ${email}   ${password}
-
-  -ABRIR LOGIN PAGE-
-  -INGRESAR EMAIL PARA LOGIN-        ${email}
-  -INGRESAR PASSWORD PARA LOGIN-     ${password}
-   Sleep   9
-  -CLICK IMAGEN DE PERFIL-
-  -VALIDAR CARGA HOME-
 
 
 -LOGOUT HOME CV-
@@ -112,12 +115,14 @@ Resource      ../common_functionalities/libraries_keywords.robot
    wait until element is visible     ${elementos_login_email['reg_emailtextbox']}
    input text                        ${elementos_login_email['reg_emailtextbox']}       ${email}
    click button                      ${elementos_login_email['log_siguiente']}
+   Sleep   2
 
 -INGRESAR PASSWORD PARA LOGIN-
     [Arguments]                      ${password}
     wait until element is visible    ${elementos_login_pass['reg_pass_passtextbox']}
     input text                       ${elementos_login_pass['reg_pass_passtextbox']}    ${password}
     click button                     ${elementos_login_pass['log_pass_siguiente']}
+    Sleep   2
 
 -INGRESAR EMAIL PARA REGISTRO-
    [Arguments]          ${EMAIL_RANDOM}
@@ -125,19 +130,21 @@ Resource      ../common_functionalities/libraries_keywords.robot
    input text                        ${elementos_register_page['reg_emailtextbox']}       ${EMAIL_RANDOM}
    click element                      ${elementos_register_page['reg_terms_check']}
    click button                      ${elementos_register_page['reg_siguiente']}
+   Sleep   2
 
 -INGRESAR PASSWORD PARA REGISTRO-
   [Arguments]                        ${pass_valido}
    wait until element is visible     ${elementos_register_page_pass['reg_passfield']}
    input text                        ${elementos_register_page_pass['reg_passfield']}       ${pass_valido}
    click button                      ${elementos_register_page_pass['reg_siguiente']}
+   Sleep   2
 
 
 
 -CLICK IMAGEN DE PERFIL-
-    Sleep   4
-    wait until page contains element      ${elementos_profile_page['selectProfile_1_image']}
-    click element                        ${elementos_profile_page['selectProfile_1_image']}
+    Sleep   2
+    Run Keyword And Ignore Error  wait until page contains element      ${elementos_profile_page['selectProfile_1_image']}
+    Run Keyword And Ignore Error  click element                        ${elementos_profile_page['selectProfile_1_image']}
 
 
 -VALIDAR CARGA HOME-

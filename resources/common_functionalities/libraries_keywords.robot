@@ -8,19 +8,14 @@ Library       ../../resources/charles_proxy/charles_library.py
 Resource       ../common_functionalities/variables.robot
 Resource    tests_keywords.robot
 
+
 Library           String
 Library	       ExcelLibrary
 
 *** Keywords ***
 # Charles Keywords
 
--chromeheadless-
-    [Arguments]    ${url}
-    ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome options}    add_argument    --headless
-    Set Selenium Implicit Wait    2 seconds
-    Open Browser    ${url}   chrome   chrome_options=${chrome options}
-    Set Window Size    400  400
+
 -ABRIR CHARLES-
     #start_charles_proxy_in_headless_mode
     Sleep   1
@@ -80,6 +75,7 @@ Library	       ExcelLibrary
       Run Keyword And Continue On Failure   element text should be      ${a1['${element}']}    ${a2['${element}']}
      # Run Keyword And Ignore Error          scroll element into view    ${a1['${element}']}
       Run Keyword And Continue On Failure   capture element screenshot    ${a1['${element}']}
+
     END
 
 
