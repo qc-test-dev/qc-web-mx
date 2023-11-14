@@ -9,31 +9,36 @@ port= "8888"
 
 from datetime import datetime
 
-#charles_proxy_application_path = "/Users/at/Library/charles/Contents/MacOS"
 local_machine_url_requests_proxy = "http://127.0.0.1:8888"
 
 charles_proxy_start_recording_url = "http://control.charles/recording/start"
 charles_proxy_stop_recording_url = "http://control.charles/recording/stop"
 charles_proxy_download_recording_url = "http://control.charles/session/download"
 charles_proxy_configuration_file_path = "/Users/at/Desktop/qc/automation/Global_framework_generico_login/qc_web_8531/resources/charles_proxy/config_by_country_chls/${pais}/com.xk72.charles.config".format(pais=PAIS)
-charles_local_path = "../../Resultados/charles_traces/"
+charles_local_path = "../../Resultados/charles_traces"
+local_chl_path="Library/charles/Contents/MacOS/charles"
+chl_path=local_chl_path+'/Users/at/'
 
 def start_charles_proxy_in_headless_mode():
-    #print(os.environ['PAIS'])
-    #iniciar=os.system("charles" + " -config " + charles_proxy_configuration_file_path + " &")
-    #time.sleep(4)
-    return 0
+    print(os.environ['PAIS'])
+    iniciar=os.system("charles" + " -headless -config " + charles_proxy_configuration_file_path + " &")
+    time.sleep(5)
+    return iniciar
 
 def start_charles_proxy_session_recording():
-    #start = os.system("curl -v -x " + local_machine_url_requests_proxy + " " + charles_proxy_start_recording_url)
-    return 0
+    start = os.system("curl -v -x " + local_machine_url_requests_proxy + " " + charles_proxy_start_recording_url)
+    return start
 
 
 def stop_charles_proxy_session_recording():
     #stop = os.system("curl -v -x " + local_machine_url_requests_proxy + " " + charles_proxy_stop_recording_url)
+    '''
+    stop = os.system ("/Users/at/Library/charles/Contents/MacOS/charles")
+
+    return
+    '''
     return 0
 
-'''
 def download_charles_proxy_session_recording():
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -50,4 +55,4 @@ def terminate_all_charles_proxy_sessions():
     os.system("networksetup -setwebproxystate Wi-Fi off")
     os.system("networksetup -setsecurewebproxystate Wi-Fi off")
 
-start_charles_proxy_in_headless_mode()
+'''
